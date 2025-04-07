@@ -151,7 +151,7 @@ body::-webkit-scrollbar-thumb {
   display: block;
   height: 3.47vw;
   width: 30px;
-  background-image: url(../wp-content/uploads/black-menu-pattern.svg);
+  background-image: url(./wp-content/uploads/black-menu-pattern.svg);
   background-size: 300%;
 }
 .right-sidebar .yellow-lightgreen-bg {
@@ -179,19 +179,19 @@ body::-webkit-scrollbar-thumb {
 /* BACKGROUND THEN PATTERN */
 .lightgreen-yellow-bg {
   background-color: var(--lightgreen);
-  background-image: url(../wp-content/uploads/yellow-pattern.svg);
+  background-image: url(./wp-content/uploads/yellow-pattern.svg);
 }
 .yellow-lightgreen-bg {
   background-color: var(--yellow);
-  background-image: url(../wp-content/uploads/lightgreen-pattern.svg);
+  background-image: url(./wp-content/uploads/lightgreen-pattern.svg);
 }
 .lightblue-purple-bg {
   background-color: var(--lightblue);
-  background-image: url(../wp-content/uploads/purple-pattern.svg);
+  background-image: url(./wp-content/uploads/purple-pattern.svg);
 }
 .pink-purple-bg {
   background-color: var(--pink);
-  background-image: url(../wp-content/uploads/purple-pattern.svg);
+  background-image: url(./wp-content/uploads/purple-pattern.svg);
 }
 /* UTILITY END */
 .pinned-hero {
