@@ -64,22 +64,32 @@ $(function () {
     {
       element: "#sugar3",
       path: "#sugar-curve-2",
-      delay: 0.2,
+      delay: -0.2,
     },
     {
       element: "#sugar4",
-      path: "#sugar-curve-3",
+      path: "#sugar-curve-2",
       delay: 0.2,
     },
     {
       element: "#sugar5",
-      path: "#sugar-curve-4",
+      path: "#sugar-curve-3",
       delay: -0.15,
     },
     {
       element: "#sugar6",
+      path: "#sugar-curve-3",
+      delay: 0.3, // Delayed start after sugar5
+    },
+    {
+      element: "#sugar7",
       path: "#sugar-curve-4",
-      delay: 0.4, // Delayed start after sugar5
+      delay: 0, // Delayed start after sugar5
+    },
+    {
+      element: "#sugar8",
+      path: "#sugar-curve-4",
+      delay: 0.1, // Delayed start after sugar5
     },
   ];
 
@@ -90,6 +100,7 @@ $(function () {
     // Hide initially
     gsap.set(element, {
       scale: 0.8, // Optional: Scale the sugar images if needed
+      autoAlpha: 0,
     });
 
     // Calculate delay based on scroll progress
@@ -171,9 +182,11 @@ $(function () {
 });
 
 $(function () {
-  function animateParallax(id, xAmount) {
+  function animateParallax(id, xAmount, yAmount, rotation) {
     gsap.to(id, {
       x: xAmount,
+      y: yAmount,
+      rotate: rotation,
       scale: "1.03",
       scrollTrigger: {
         trigger: ".pin-spacer:has(.pinned-hero)",
@@ -189,5 +202,15 @@ $(function () {
   animateParallax("#main-green-durian-left", "1.5vw");
   animateParallax("#main-plant-right", "-5vw");
   animateParallax("#main-green-coconut", "-2vw");
+  animateParallax("#lcw", "-3vw", "-5vw");
+  animateParallax("#motorbike", "10vw", "0");
+  animateParallax("#myvi", "-5vw", "5%", "0");
 });
 // FIRST SECTION ANIMATIONS END
+
+// .pinned-hero #myvi {
+//   width: 9.17vw;
+//   top: 57%;
+//   left: 24%;
+//   rotate: 10deg;
+// }

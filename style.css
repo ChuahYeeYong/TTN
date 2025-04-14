@@ -267,8 +267,9 @@ h1.hero-title {
 }
 .pinned-hero .monkey-container #monkey {
   position: absolute;
-  right: 10%;
+  right: 5%;
   top: 40%;
+  width: 10.97vw;
   transform-origin: top left;
   animation: hanging 3s linear infinite alternate;
 }
@@ -279,6 +280,22 @@ h1.hero-title {
   100% {
     transform: rotate(-10deg);
   }
+}
+.pinned-hero #lcw {
+  right: 10%;
+  bottom: 25%;
+  width: 18.78vw;
+}
+.pinned-hero #myvi {
+  width: 9.17vw;
+  top: 60%;
+  left: 24%;
+  rotate: 10deg;
+}
+.pinned-hero #motorbike {
+  left: 2vw;
+  bottom: 0;
+  width: 16vw;
 }
 .pinned-hero #main-green-coconut {
   width: 28.4vw;
