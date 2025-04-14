@@ -282,7 +282,7 @@ h1.hero-title {
 .pinned-hero img#teh-tarik-front {
   position: absolute;
   left: 0;
-  z-index: 100  ;
+  z-index: 100;
 }
 .pinned-hero .monkey-container #monkey {
   position: absolute;
@@ -356,7 +356,7 @@ h1.hero-title {
 }
 #teh-tarik-aneh {
   position: absolute;
-  left: 70vw;
+  left: 55vw;
   height: 100vh;
   height: 100lvh;
 }
@@ -383,7 +383,7 @@ h1.hero-title {
 .pinned-horizontal-section .typewriter-box {
   margin-top: 2vw;
   background-color: var(--yellow);
-  max-width: 42vw;
+  max-width: 55vw;
   padding: 2.92vw 11.11vw 1.39vw 3.06vw;
   background-image: url(./wp-content/uploads/face-starfish.webp);
   background-size: contain;
@@ -401,16 +401,110 @@ h1.hero-title {
 /* SECOND SECTION END */
 /* THIRD SECTION */
 .national-importance {
+  position: relative;
   background-color: var(--red);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 .national-importance .text-content {
   padding: 5.56vw 10.76vw;
   display: flex;
   flex-direction: column;
   gap: 1.39vw;
+}
+.national-importance .national-blue-mountain,
+.national-importance .national-green-mountain {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+.national-importance .national-blue-mountain {
+  left: -5vw;
+}
+.national-importance .national-green-mountain {
+  right: -5vw;
+}
+.national-importance .yellow-mountain {
+  width: 100vw;
+  z-index: 10;
+  position: relative;
+}
+.national-importance .yellow-mountain-container {
+  margin-top: 22vw;
+  position: relative;
+  bottom: -1vw;
+}
+.national-importance .hornbill,
+.national-importance .hornbill-bg {
+  position: absolute;
+  left: 50%;
+  top: -70%;
+  transform: translate(-50%, -100%);
+}
+.national-importance .hornbill {
+  top: 30%;
+}
+.national-importance .hornbill-bg {
+  animation: slowRotate 60s linear infinite;
+}
+.sugar-rain {
+  position: absolute;
+  top: -10vw;
+}
+.sugar-rain.size-1 {
+  width: 10vw;
+}
+.sugar-rain.size-2 {
+  width: 7vw;
+}
+.sugar-rain.speed-1 {
+  animation: rainDrop 13s linear infinite;
+}
+.sugar-rain.speed-2 {
+  animation: rainDrop 7s linear infinite;
+}
+.sugar-rain.speed-3 {
+  animation: rainDrop 3s linear infinite;
+}
+img.sugar-rain:nth-of-type(1) {
+  animation-delay: 1s;
+}
+img.sugar-rain:nth-of-type(2) {
+  animation-delay: 2s;
+}
+img.sugar-rain:nth-of-type(3) {
+  animation-delay: 1.5s;
+}
+img.sugar-rain:nth-of-type(4) {
+  animation-delay: 4.2s;
+}
+img.sugar-rain:nth-of-type(5) {
+  animation-delay: 0.1s;
+}
+img.sugar-rain:nth-of-type(6) {
+  animation-delay: 0.7s;
+}
+img.sugar-rain:nth-of-type(7) {
+  animation-delay: 2.5s;
+}
+img.sugar-rain:nth-of-type(8) {
+  animation-delay: 1s;
+}
+img.sugar-rain:nth-of-type(9) {
+  animation-delay: 0s;
+}
+@keyframes rainDrop {
+  0% {
+    transform: translateY(0) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(60vw) rotate(0);
+  }
+  100% {
+    transform: translateY(120vw) rotate(20deg);
+  }
 }
 /* THIRD SECTION END */

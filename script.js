@@ -220,10 +220,32 @@ $(document).ready(function () {
 
         // Move #teh-tarik-aneh right by 30vw as scroll progresses
         gsap.set("#teh-tarik-aneh", {
-          x: 50 * self.progress + "vw",
+          x: 35 * self.progress + "vw",
         });
       },
     });
   }
   initHorizontalScroll();
 });
+// SECOND SECTION ANIMATIONS END
+// THIRD SECTION ANIMATIONS
+$(function () {
+  function animateParallax(id, xAmount, yAmount) {
+    gsap.to(id, {
+      x: xAmount,
+      y: yAmount,
+      scale: "1.1",
+      scrollTrigger: {
+        trigger: ".national-importance",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+      ease: "easeOutExpo",
+    });
+  }
+
+  animateParallax(".national-green-mountain", "-5vw");
+  animateParallax(".national-blue-mountain", "4vw");
+});
+// THIRD SECTION ANIMATIONS END
