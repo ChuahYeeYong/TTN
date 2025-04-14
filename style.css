@@ -194,6 +194,7 @@ body::-webkit-scrollbar-thumb {
   background-image: url(./wp-content/uploads/purple-pattern.svg);
 }
 /* UTILITY END */
+/* FIRST SECTION */
 .pinned-hero {
   display: flex;
   flex-wrap: wrap;
@@ -201,6 +202,19 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   height: 110vh;
   background-color: var(--yellow);
+}
+h1.hero-title {
+  animation: scrollLeft 15s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+}
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 .pinned-hero .fact-box {
   margin-left: 75vw;
@@ -212,29 +226,72 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   bottom: -25%;
   transform: translateX(-50%);
+  animation: slowRotate 60s linear infinite;
+}
+@keyframes slowRotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-360deg);
+  }
 }
 .pinned-hero .mountains {
   position: absolute;
 }
-.pinned-hero #main-pink-mountain {
-  width: 70vw;
-  right: -17.78vw;
+.pinned-hero #main-plant-right {
+  width: 64.58vw;
+  right: -8.54vw;
   bottom: 0;
 }
-.pinned-hero #main-blue-mountain {
-  width: 91.7;
-  left: -20vw;
-  bottom: -2vh;
+.pinned-hero #main-durian-left {
+  width: 50.07vw;
+  height: auto;
+  left: -6.94vw;
+  bottom: 0;
 }
-.pinned-hero img#main-teh-tarik {
+.pinned-hero #main-green-durian-left {
+  width: 50.07vw;
+  height: auto;
+  left: -6.94vw;
+  bottom: 0;
+}
+.pinned-hero .monkey-container {
   position: absolute;
   bottom: -8.94vw;
-  width: 40vw;
   left: 55%;
   transform: translateX(-50%);
 }
-.pinned-hero #main-green-mountain {
-  width: 62.8vw;
-  left: 23vw;
+.pinned-hero img#main-teh-tarik {
+  width: 40vw;
+}
+.pinned-hero .monkey-container #monkey {
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  transform-origin: top left;
+  animation: hanging 3s linear infinite alternate;
+}
+@keyframes hanging {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.pinned-hero #main-green-coconut {
+  width: 28.4vw;
+  right: 18.06vw;
   bottom: 0;
+}
+/* FIRST SECTION END */
+
+.bouncer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 3vw;
+  will-change: transform;
+  transform: translate(-50%, -50%); /* optional for center alignment */
 }
