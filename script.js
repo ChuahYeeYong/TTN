@@ -13,16 +13,15 @@ $(function () {
   // SPLIT TEXT ANIMATION
   $("h1, h2").each(function () {
     const heading = $(this);
-    const splitText = new SplitType(this, { types: "chars" });
-    const chars = splitText.chars;
+    const splitText = new SplitType(this, { types: "lines" });
+    const lines = splitText.lines;
 
-    gsap.from(chars, {
-      opacity: 0,
+    gsap.from(lines, {
       y: 30,
-      rotation: 20,
+      rotation: 30,
       ease: "easeOutExpo",
-      duration: 0.8,
-      stagger: 0.06,
+      duration: 0.6,
+      stagger: 0.05,
       scrollTrigger: {
         trigger: heading,
         start: "top bottom",
@@ -180,7 +179,6 @@ $(function () {
     scrollStopTimeout = setTimeout(() => shakeTween.pause(), scrollStopDelay);
   });
 });
-
 $(function () {
   function animateParallax(id, xAmount, yAmount, rotation) {
     gsap.to(id, {
@@ -207,10 +205,35 @@ $(function () {
   animateParallax("#myvi", "-5vw", "5%", "0");
 });
 // FIRST SECTION ANIMATIONS END
+// SECOND SECTION ANIMATIONS
+$(document).ready(function () {
+  // Initialize the horizontal scroll
+  function initHorizontalScroll() {
+    const $container = $(".overflow-container");
+    const $pinnedSection = $(".pinned-horizontal-section");
+    const totalWidth = $pinnedSection.outerWidth() - $(window).width();
 
-// .pinned-hero #myvi {
-//   width: 9.17vw;
-//   top: 57%;
-//   left: 24%;
-//   rotate: 10deg;
-// }
+    // Create a ScrollTrigger for the main horizontal scroll
+    let scrollTrigger = ScrollTrigger.create({
+      trigger: $container[0],
+      start: "top top",
+      end: `+=${totalWidth}`,
+      pin: true,
+      scrub: 1,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        // Move the pinned section horizontally
+        gsap.set($pinnedSection, {
+          x: -totalWidth * self.progress,
+        });
+
+        // Move #teh-tarik-aneh right by 30vw as scroll progresses
+        gsap.set("#teh-tarik-aneh", {
+          x: 50 * self.progress + "vw",
+        });
+      },
+    });
+  }
+  initHorizontalScroll();
+});

@@ -30,14 +30,14 @@ h1.hero-title {
   margin: 2.36vw 0 0;
   clip-path: inset(-10% 0 10% 0);
 }
-h1 .char,
-h2 .char {
+h1 .line,
+h2 .line {
   transform-origin: bottom left;
 }
 h2 {
-  font-size: 10.42vw;
+  font-size: 6.94vw;
   font-weight: 400;
-  line-height: 0.867;
+  line-height: 0.9;
   letter-spacing: -4px;
   font-family: "Holen Vintage", sans-serif;
   margin: 0;
@@ -68,6 +68,10 @@ h5 {
 p {
   font-weight: 700;
   margin: 0;
+}
+small {
+  font-size: max(10px, 0.69vw);
+  line-height: 1.2;
 }
 a {
   color: var(--raisin-black);
@@ -302,8 +306,6 @@ h1.hero-title {
   right: 18.06vw;
   bottom: 0;
 }
-/* FIRST SECTION END */
-
 .bouncer {
   position: absolute;
   top: 0;
@@ -312,3 +314,74 @@ h1.hero-title {
   will-change: transform;
   transform: translate(-50%, -50%); /* optional for center alignment */
 }
+/* FIRST SECTION END */
+
+/* SECOND SECTION */
+.overflow-container {
+  overflow: hidden;
+}
+.pinned-horizontal-section {
+  display: flex;
+  width: max-content;
+}
+.pinned-horizontal-section > div {
+  height: 100vh;
+  height: 100lvh;
+  background-size: cover;
+}
+.pinned-horizontal-section .left-section {
+  background-image: url(./wp-content/uploads/recognise-green-bg.webp);
+  width: 100vw;
+}
+.pinned-horizontal-section .text-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: calc(100%);
+  padding: 5.56vw 7.64vw;
+}
+#teh-tarik-aneh {
+  position: absolute;
+  left: 70vw;
+  height: 100vh;
+  height: 100lvh;
+}
+.pinned-horizontal-section .middle-section {
+  background-image: url(./wp-content/uploads/recognise-mid-bg.webp);
+  width: 25vw;
+}
+.pinned-horizontal-section .right-section {
+  background-image: url(./wp-content/uploads/recognise-yellow-bg.webp);
+  width: 90vw;
+}
+.pinned-horizontal-section .typewriter-box:before {
+  content: "";
+  display: block;
+  background-image: url(./wp-content/uploads/typewriter-box-top-corner.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -1.9vw;
+  left: 0;
+  height: 2vw;
+  width: 3.19vw;
+  position: absolute;
+}
+.pinned-horizontal-section .typewriter-box {
+  margin-top: 2vw;
+  background-color: var(--yellow);
+  max-width: 42vw;
+  padding: 2.92vw 11.11vw 1.39vw 3.06vw;
+  background-image: url(./wp-content/uploads/face-starfish.webp);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: translateX(1vw) rotate(-3deg);
+}
+.pinned-horizontal-section .typewriter-box h3 {
+  margin-bottom: 20px;
+}
+.pinned-horizontal-section .right-section small {
+  margin-top: auto;
+}
+/* SECOND SECTION END */
