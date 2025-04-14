@@ -30,6 +30,30 @@ $(function () {
     });
   });
 });
+$(function () {
+  $(".typewriter-box *").each(function (index, element) {
+    // Store original text and clear it
+    var originalText = $(element).text();
+    $(element).text("");
+
+    // Initialize Typewriter
+    var typewriter = new Typewriter(element, {
+      cursor: "|",
+    });
+
+    typewriter
+      .changeDelay(70)
+      .typeString(originalText)
+      .pauseFor(1000)
+      .callFunction(() => {
+        const cursor = element.querySelector(".Typewriter__cursor");
+        if (cursor) {
+          cursor.style.display = "none";
+        }
+      })
+      .start();
+  });
+});
 // GLOBAL ANIMATIONS END
 
 // FIRST SECTION ANIMATIONS
