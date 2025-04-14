@@ -5,6 +5,7 @@
   --lightgreen: #00a64e;
   --pink: #f6a4af;
   --lightblue: #8fd4d5;
+  --red: #d6322f;
 }
 @font-face {
   font-family: "Niramit";
@@ -42,6 +43,11 @@ h2 {
   font-family: "Holen Vintage", sans-serif;
   margin: 0;
 }
+h2 img {
+  height: 5vw;
+  scale: 1.4;
+  padding-inline: 1.56vw;
+}
 h3 {
   font-size: 4.17vw;
   font-weight: 400;
@@ -76,6 +82,9 @@ small {
 a {
   color: var(--raisin-black);
   text-decoration: none;
+}
+* {
+  box-sizing: border-box;
 }
 body {
   font-size: 1.11vw;
@@ -266,8 +275,14 @@ h1.hero-title {
   left: 55%;
   transform: translateX(-50%);
 }
-.pinned-hero img#main-teh-tarik {
+.pinned-hero img#main-teh-tarik,
+.pinned-hero img#teh-tarik-front {
   width: 40vw;
+}
+.pinned-hero img#teh-tarik-front {
+  position: absolute;
+  left: 0;
+  z-index: 100  ;
 }
 .pinned-hero .monkey-container #monkey {
   position: absolute;
@@ -336,7 +351,6 @@ h1.hero-title {
 .pinned-horizontal-section .text-content {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   height: calc(100%);
   padding: 5.56vw 7.64vw;
 }
@@ -385,3 +399,18 @@ h1.hero-title {
   margin-top: auto;
 }
 /* SECOND SECTION END */
+/* THIRD SECTION */
+.national-importance {
+  background-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.national-importance .text-content {
+  padding: 5.56vw 10.76vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.39vw;
+}
+/* THIRD SECTION END */

@@ -44,8 +44,8 @@ $(function () {
 
   // Make the SVG visible and sized appropriately
   const svg = document.getElementById("motion-path");
-  svg.setAttribute("width", "110vw");
-  svg.setAttribute("height", "70%");
+  svg.setAttribute("width", "100vw");
+  svg.setAttribute("height", "90%");
   svg.setAttribute("viewBox", "0 0 1500 500"); // Adjusted to encompass all paths
 
   // Configuration for sugar animations
@@ -136,16 +136,6 @@ $(function () {
         duration: 0.8,
       },
       0
-    ); // Start at the same time as the fade in
-
-    // Fade out at the end of the path
-    tl.to(
-      element,
-      {
-        autoAlpha: 0,
-        duration: 0.1,
-      },
-      "-=0.1"
     );
   });
 });
