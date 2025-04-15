@@ -15,7 +15,8 @@
   font-family: "Holen Vintage";
   src: url("src/Holen%20Vintage.otf") format("opentype"); /* Adjust path if needed */
 }
-h1 {
+h1,
+h2.large {
   font-size: 15.97vw;
   font-weight: 400;
   line-height: 0.83;
@@ -381,9 +382,12 @@ h1.hero-title {
   position: absolute;
 }
 .pinned-horizontal-section .typewriter-box {
+  display: flex;
+  flex-direction: column;
   margin-top: 2vw;
   background-color: var(--yellow);
   max-width: 55vw;
+  min-height: 18vw;
   padding: 2.92vw 11.11vw 1.39vw 3.06vw;
   background-image: url(./wp-content/uploads/face-starfish.webp);
   background-size: contain;
@@ -395,7 +399,7 @@ h1.hero-title {
 .pinned-horizontal-section .typewriter-box h3 {
   margin-bottom: 20px;
 }
-.pinned-horizontal-section .right-section small {
+.pinned-horizontal-section small {
   margin-top: auto;
 }
 /* SECOND SECTION END */

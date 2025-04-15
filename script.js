@@ -31,27 +31,48 @@ $(function () {
   });
 });
 $(function () {
-  $(".typewriter-box *").each(function (index, element) {
-    // Store original text and clear it
-    var originalText = $(element).text();
-    $(element).text("");
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const $element = $(element);
 
-    // Initialize Typewriter
-    var typewriter = new Typewriter(element, {
-      cursor: "|",
-    });
+          // Prevent retriggering
+          if (!$element.hasClass("typewriter-initialized")) {
+            $element.addClass("typewriter-initialized active"); // Add active class
 
-    typewriter
-      .changeDelay(70)
-      .typeString(originalText)
-      .pauseFor(1000)
-      .callFunction(() => {
-        const cursor = element.querySelector(".Typewriter__cursor");
-        if (cursor) {
-          cursor.style.display = "none";
+            const originalText = $element.text();
+            $element.text("");
+
+            const typewriter = new Typewriter(element, {
+              cursor: "|",
+            });
+
+            typewriter
+              .changeDelay(40)
+              .typeString(originalText)
+              .pauseFor(1000)
+              .callFunction(() => {
+                const cursor = element.querySelector(".Typewriter__cursor");
+                if (cursor) {
+                  cursor.style.display = "none";
+                }
+              })
+              .start();
+          }
+
+          obs.unobserve(element); // Stop observing once triggered
         }
-      })
-      .start();
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of element is visible
+    }
+  );
+
+  $(".typewriter-box h3").each(function () {
+    observer.observe(this);
   });
 });
 // GLOBAL ANIMATIONS END
@@ -269,7 +290,7 @@ $(function () {
     });
   }
 
-  animateParallax(".national-green-mountain", "-5vw");
-  animateParallax(".national-blue-mountain", "4vw");
+  animateParallax(".national-green-mountain", "-15vw");
+  animateParallax(".national-blue-mountain", "14vw");
 });
 // THIRD SECTION ANIMATIONS END
