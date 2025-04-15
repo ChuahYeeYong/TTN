@@ -71,7 +71,7 @@ $(function () {
     }
   );
 
-  $(".typewriter-box h3").each(function () {
+  $(".typewriter-box h3, span.typewriter-box").each(function () {
     observer.observe(this);
   });
 });
@@ -294,3 +294,127 @@ $(function () {
   animateParallax(".national-blue-mountain", "14vw");
 });
 // THIRD SECTION ANIMATIONS END
+// FOURTH SECTION ANIMATIONS
+// $(function () {
+//   function movingLeaves(id, xAmount, yAmount) {
+//     gsap.from(id, {
+//       x: xAmount,
+//       y: yAmount,
+//       rotate: "30deg",
+//       scale: "1.1",
+//       scrollTrigger: {
+//         trigger: ".pouring-cup-container",
+//         start: "top 80%",
+//         end: "bottom 50%",
+//         scrub: true,
+//       },
+//       ease: "easeInOutExpo",
+//     });
+//   }
+
+//   movingLeaves("#pouring-leaf-1", "-73vw", "-13vw");
+//   movingLeaves("#pouring-leaf-2", "-68vw", "-34.5vw");
+//   movingLeaves("#pouring-leaf-3", "-56vw", "-27.5vw");
+//   movingLeaves("#pouring-leaf-4", "-43vw", "-15vw");
+//   movingLeaves("#pouring-leaf-5", "-30vw", "-7vw");
+//   movingLeaves("#pouring-leaf-6", "-26.3vw", "-12.8vw");
+//   movingLeaves("#pouring-leaf-7", "-15vw", "-26vw");
+//   movingLeaves("#pouring-leaf-8", "-13vw", "-8vw");
+//   movingLeaves("#pouring-leaf-9", "-2.5vw", "-17.5vw");
+//   movingLeaves("#pouring-leaf-10", "3vw", "-18vw");
+//   movingLeaves("#pouring-leaf-11", "8vw", "-24vw");
+
+//   gsap.fromTo(
+//     ".pouring-cup-container",
+//     {
+//       rotate: -24,
+//       transformOrigin: "bottom left",
+//     },
+//     {
+//       rotate: -55,
+//       scrollTrigger: {
+//         trigger: ".pouring-cup-container",
+//         start: "bottom 90%",
+//         end: "bottom 20%",
+//         scrub: true,
+//       },
+//       ease: "easeInOutExpo",
+//     }
+//   );
+// });
+$(function () {
+  function movingLeaves(id, xAmount, yAmount) {
+    gsap.from(id, {
+      x: xAmount,
+      y: yAmount,
+      rotate: "30deg",
+      scale: "1.1",
+      scrollTrigger: {
+        trigger: ".pouring-cup-container",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+      ease: "easeInOutExpo",
+    });
+  }
+
+  // Animate leaves
+  movingLeaves("#pouring-leaf-1", "-73vw", "-13vw");
+  movingLeaves("#pouring-leaf-2", "-68vw", "-34.5vw");
+  movingLeaves("#pouring-leaf-3", "-56vw", "-27.5vw");
+  movingLeaves("#pouring-leaf-4", "-43vw", "-15vw");
+  movingLeaves("#pouring-leaf-5", "-30vw", "-7vw");
+  movingLeaves("#pouring-leaf-6", "-26.3vw", "-12.8vw");
+  movingLeaves("#pouring-leaf-7", "-15vw", "-26vw");
+  movingLeaves("#pouring-leaf-8", "-13vw", "-8vw");
+  movingLeaves("#pouring-leaf-9", "-2.5vw", "-17.5vw");
+  movingLeaves("#pouring-leaf-10", "3vw", "-18vw");
+  movingLeaves("#pouring-leaf-11", "8vw", "-24vw");
+
+  // Delay control for class toggle
+  let canAddPoured = true;
+  let pouredRemovedAt = null;
+
+  const cupTween = gsap.fromTo(
+    ".pouring-cup-container",
+    {
+      rotate: -24,
+      transformOrigin: "bottom left",
+    },
+    {
+      rotate: -55,
+      ease: "easeInOutExpo",
+      scrollTrigger: {
+        trigger: ".pouring-cup-container",
+        start: "bottom 90%",
+        end: "bottom 50%",
+        scrub: true,
+        onUpdate: (self) => {
+          const el = document.querySelector(".stream-container");
+
+          if (self.progress === 1) {
+            const now = Date.now();
+            // Wait 1s after removal before re-adding
+            if (canAddPoured && (!pouredRemovedAt || now - pouredRemovedAt >= 1000)) {
+              el.classList.add("poured");
+            }
+          }
+
+          if (self.progress < 1 && el.classList.contains("poured")) {
+            el.classList.remove("poured");
+            pouredRemovedAt = Date.now();
+            canAddPoured = false;
+            // Unlock re-adding after 1s
+            setTimeout(() => {
+              canAddPoured = true;
+            }, 1000);
+          }
+        },
+      },
+    }
+  );
+});
+
+
+// FOURTH SECTION ANIMATIONS END
