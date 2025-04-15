@@ -11,23 +11,65 @@ gsap.ticker.lagSmoothing(0);
 // GLOBAL ANIMATIONS
 $(function () {
   // SPLIT TEXT ANIMATION
-  $("h1, h2").each(function () {
-    const heading = $(this);
-    const splitText = new SplitType(this, { types: "lines" });
-    const lines = splitText.lines;
+  // $("h1, h2").each(function () {
+  //   const heading = $(this);
+  //   const splitText = new SplitType(this, { types: "lines" });
+  //   const lines = splitText.lines;
 
-    gsap.from(lines, {
-      y: 30,
-      rotation: 30,
-      ease: "easeOutExpo",
-      duration: 0.6,
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: heading,
-        start: "top bottom",
-        once: true,
-      },
-    });
+  //   gsap.from(lines, {
+  //     y: 30,
+  //     rotation: 30,
+  //     ease: "easeOutExpo",
+  //     duration: 0.6,
+  //     stagger: 0.05,
+  //     scrollTrigger: {
+  //       trigger: heading,
+  //       start: "top bottom",
+  //       once: true,
+  //     },
+  //   });
+  // });
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const heading = entry.target;
+
+          // Split the heading into lines
+          const splitText = new SplitType(heading, { types: "lines" });
+          const lines = splitText.lines;
+
+          // Animate with GSAP
+          gsap.fromTo(
+            lines,
+            {
+              y: 30,
+              rotation: 30,
+            },
+            {
+              y: 0,
+              rotation: 0,
+              // autoAlpha: 1,
+              ease: "easeInOutExpo",
+              duration: 0.8,
+              stagger: 0.3,
+            }
+          );
+
+          // Unobserve after animation is triggered once
+          obs.unobserve(heading);
+        }
+      });
+    },
+    {
+      threshold: 0, // Adjust as needed
+    }
+  );
+
+  // Apply to all h1 and h2 elements
+  document.querySelectorAll("h1, h2").forEach((heading) => {
+    observer.observe(heading);
   });
 });
 $(function () {
@@ -396,7 +438,10 @@ $(function () {
           if (self.progress === 1) {
             const now = Date.now();
             // Wait 1s after removal before re-adding
-            if (canAddPoured && (!pouredRemovedAt || now - pouredRemovedAt >= 1000)) {
+            if (
+              canAddPoured &&
+              (!pouredRemovedAt || now - pouredRemovedAt >= 1000)
+            ) {
               el.classList.add("poured");
             }
           }
@@ -415,6 +460,5 @@ $(function () {
     }
   );
 });
-
 
 // FOURTH SECTION ANIMATIONS END
