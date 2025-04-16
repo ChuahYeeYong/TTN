@@ -52,8 +52,8 @@ $(function () {
               rotation: 0,
               // autoAlpha: 1,
               ease: "easeInOutExpo",
-              duration: 0.8,
-              stagger: 0.3,
+              duration: 0.6,
+              stagger: 0.05,
             }
           );
 
@@ -402,17 +402,17 @@ $(function () {
   }
 
   // Animate leaves
-  movingLeaves("#pouring-leaf-1", "-73vw", "-13vw");
-  movingLeaves("#pouring-leaf-2", "-68vw", "-34.5vw");
-  movingLeaves("#pouring-leaf-3", "-56vw", "-27.5vw");
-  movingLeaves("#pouring-leaf-4", "-43vw", "-15vw");
-  movingLeaves("#pouring-leaf-5", "-30vw", "-7vw");
-  movingLeaves("#pouring-leaf-6", "-26.3vw", "-12.8vw");
-  movingLeaves("#pouring-leaf-7", "-15vw", "-26vw");
-  movingLeaves("#pouring-leaf-8", "-13vw", "-8vw");
-  movingLeaves("#pouring-leaf-9", "-2.5vw", "-17.5vw");
-  movingLeaves("#pouring-leaf-10", "3vw", "-18vw");
-  movingLeaves("#pouring-leaf-11", "8vw", "-24vw");
+  movingLeaves("#pouring-leaf-1", "-73vw", "-43vw");
+  movingLeaves("#pouring-leaf-2", "-68vw", "-64.5vw");
+  movingLeaves("#pouring-leaf-3", "-56vw", "-47.5vw");
+  movingLeaves("#pouring-leaf-4", "-43vw", "-35vw");
+  movingLeaves("#pouring-leaf-5", "-30vw", "-27vw");
+  movingLeaves("#pouring-leaf-6", "-26.3vw", "-32.8vw");
+  movingLeaves("#pouring-leaf-7", "-15vw", "-46vw");
+  movingLeaves("#pouring-leaf-8", "-13vw", "-28vw");
+  movingLeaves("#pouring-leaf-9", "-2.5vw", "-37.5vw");
+  movingLeaves("#pouring-leaf-10", "3vw", "-38vw");
+  movingLeaves("#pouring-leaf-11", "8vw", "-44vw");
 
   // Delay control for class toggle
   let canAddPoured = true;
@@ -460,5 +460,7 @@ $(function () {
     }
   );
 });
-
 // FOURTH SECTION ANIMATIONS END
+// FIFTH SECTION ANIMATIONS
+
+// FIFTH SECTION ANIMATIONS END

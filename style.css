@@ -44,6 +44,7 @@ h2 {
   letter-spacing: -4px;
   font-family: "Holen Vintage", sans-serif;
   margin: 0;
+  overflow: hidden;
 }
 h3 {
   font-size: 4.17vw;
@@ -544,7 +545,7 @@ img.sugar-rain:nth-of-type(9) {
   padding-top: 3.33vw;
   position: relative;
   overflow: hidden;
-  background-image: url(./wp-content/uploads/that-one-company-bg.webp);
+  /* background-image: url(./wp-content/uploads/that-one-company-bg.webp); */
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -592,7 +593,7 @@ img.sugar-rain:nth-of-type(9) {
 .pouring-leaf {
   position: absolute;
   left: 25%;
-  top: 5%;
+  top: 20%;
 }
 .pouring-cup-container img:first-child,
 .pouring-cup-container .cover-cup {
@@ -607,8 +608,8 @@ img.sugar-rain:nth-of-type(9) {
   position: absolute;
   width: 7.5vw;
   height: 59.5vw;
-  top: -38%;
-  left: -97%;
+  top: -39%;
+  left: -99%;
   rotate: 60deg;
   z-index: 2;
 }
@@ -616,7 +617,7 @@ img.sugar-rain:nth-of-type(9) {
   width: 7.5vw;
 }
 .that-one-company .bottom-portion h2 {
-  margin-top: 21.67vw;
+  margin-top: 20.67vw;
 }
 .bottom-portion {
   position: relative;
@@ -686,4 +687,77 @@ img.sugar-rain:nth-of-type(9) {
   height: 68%;
   transform: translateY(-50%);
 }
+img.pouring-photos {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  object-fit: cover;
+  left: 0;
+}
+img.pouring-photos:not(.person) {
+  z-index: 10;
+}
 /* FOURTH SECTION END */
+/* FIFTH SECTION */
+.humbly-priced {
+  background: url(./wp-content/uploads/red-pattern.svg) #e14d39;
+  background-size: cover;
+  overflow: hidden;
+}
+.humbly-priced .text-content {
+  padding: 6.46vw 40vw 0 5.83vw;
+  margin-bottom: 12.85vw;
+}
+.humbly-priced h4 {
+  margin-bottom: 1vw;
+}
+.humbly-priced h2 img {
+  padding-bottom: 1.1vw;
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+.island-section {
+  position: relative;
+}
+.island-section .background {
+  height: 16.39vw;
+  animation: mountainShuffle 6s ease-in-out infinite reverse;
+}
+.island-section .foreground {
+  height: 10.42vw;
+  position: absolute;
+  bottom: 0;
+  animation: mountainShuffle 6s ease-in-out infinite;
+}
+@keyframes mountainShuffle {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateX(-8px) scale(1.01);
+  }
+  50% {
+    transform: translateX(0px) scale(1);
+  }
+  75% {
+    transform: translateX(10px) scale(1);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+.island-section .text-box {
+  position: absolute;
+}
+.island-section .pink-box {
+  background-color: pink;
+}
+.island-section .lightgreen-box {
+  background-color: var(--lightgreen);
+}
+.island-section .yellow-box {
+  background-color: var(--yellow);
+}
+/* FIFTH SECTION END */
