@@ -37,6 +37,9 @@ h1 .line,
 h2 .line {
   transform-origin: bottom left;
 }
+h2.medium {
+  font-size: 10.42vw;
+}
 h2 {
   font-size: 6.94vw;
   font-weight: 400;
@@ -70,6 +73,12 @@ h5 {
   letter-spacing: -0.5px;
   margin: 0;
 }
+h6 {
+  font-size: 1.67vw;
+  line-height: 1.167;
+  font-weight: 700;
+  margin: 0;
+}
 p {
   font-weight: 700;
   margin: 0;
@@ -86,7 +95,7 @@ a {
   box-sizing: border-box;
 }
 body {
-  font-size: 1.11vw;
+  font-size: 1.25vw;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.5px;
@@ -244,7 +253,14 @@ body::-webkit-scrollbar-thumb {
   white-space: pre;
   flex-direction: row;
 }
+.typewriter-box.small:before {
+  height: 1vw;
+  width: 1.6vw;
+  top: -0.9vw;
+}
 .typewriter-box.small {
+  flex-direction: row;
+  margin-top: 1vw;
   padding: 0.35vw 1.32vw;
 }
 /* UTILITY END */
@@ -549,6 +565,7 @@ img.sugar-rain:nth-of-type(9) {
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
+  z-index: 10;
 }
 .that-one-company .top-portion {
   padding-inline: 6.94vw;
@@ -704,8 +721,13 @@ img.pouring-photos:not(.person) {
   background-size: cover;
   overflow: hidden;
 }
+.humbly-priced .rotating-teh-tarik {
+  position: absolute;
+  height: 100%;
+  right: 0;
+}
 .humbly-priced .text-content {
-  padding: 6.46vw 40vw 0 5.83vw;
+  padding: 6.46vw 20.83vw 0 5.83vw;
   margin-bottom: 12.85vw;
 }
 .humbly-priced h4 {
@@ -753,11 +775,43 @@ img.pouring-photos:not(.person) {
 }
 .island-section .pink-box {
   background-color: pink;
+  left: 13vw;
+  bottom: 7vw;
+  padding: 1.3vw 1.82vw;
+  max-width: 17.7vw;
+  rotate: -12deg;
+}
+.island-section .pink-box .typewriter-box {
+  rotate: -6deg;
 }
 .island-section .lightgreen-box {
-  background-color: var(--lightgreen);
+  top: -5vw;
+  right: 9vw;
+  background-color: #90cec7;
+  padding: 1.67vw 2.08vw 2.78vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.56vw;
+  max-width: 25vw;
+  rotate: -16deg;
+}
+.island-section .lightgreen-box div:has(.greenbox-text-content) {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.81vw;
+}
+.island-section .lightgreen-box .greenbox-text-content h4 {
+  margin-block: -6% 0;
 }
 .island-section .yellow-box {
+  display: flex;
   background-color: var(--yellow);
+  max-width: 28vw;
+  top: 10%;
+  rotate: 12deg;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 1.04vw;
+  padding: 2.43vw 2.78vw;
 }
 /* FIFTH SECTION END */

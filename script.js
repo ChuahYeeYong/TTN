@@ -113,9 +113,11 @@ $(function () {
     }
   );
 
-  $(".typewriter-box h3, span.typewriter-box").each(function () {
-    observer.observe(this);
-  });
+  $(".typewriter-box h3, span.typewriter-box, h6.typewriter-box").each(
+    function () {
+      observer.observe(this);
+    }
+  );
 });
 // GLOBAL ANIMATIONS END
 
@@ -462,5 +464,61 @@ $(function () {
 });
 // FOURTH SECTION ANIMATIONS END
 // FIFTH SECTION ANIMATIONS
+$(function () {
+  const floatSettings = [
+    { selector: ".pink-box", y: "-1vw", x: "2vw", rotation: -1.5 },
+    { selector: ".yellow-box", y: "1vw", x: "-1vw", rotation: -12 },
+    { selector: ".lightgreen-box", y: "-0.5vw", x: "1.5vw", rotation: -0.8 },
+  ];
+  floatSettings.forEach((config) => {
+    const elements = $(config.selector);
+    elements.each(function () {
+      const el = $(this);
+      const floatAnim = gsap.to(el, {
+        y: `+=${config.y}`,
+        x: `+=${config.x}`,
+        rotation: `+=${config.rotation}`,
+        scale: 1.01,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        duration: 3,
+        paused: true,
+      });
+      let scrollTimeout;
+      ScrollTrigger.create({
+        trigger: ".humbly-priced",
+        start: "top 80%",
+        end: "bottom top",
+        onUpdate: () => {
+          if (!floatAnim.isActive()) {
+            floatAnim.play();
+          }
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            floatAnim.pause();
+          }, 500);
+        },
+        onLeave: () => floatAnim.pause(),
+        onLeaveBack: () => floatAnim.pause(),
+      });
+    });
+  });
+});
+
+$(function () {
+  gsap.to(".rotating-teh-tarik", {
+    rotate: -15,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".humbly-priced",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
+
 
 // FIFTH SECTION ANIMATIONS END
