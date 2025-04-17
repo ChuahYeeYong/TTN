@@ -466,9 +466,9 @@ $(function () {
 // FIFTH SECTION ANIMATIONS
 $(function () {
   const floatSettings = [
-    { selector: ".pink-box", y: "-1vw", x: "2vw", rotation: -1.5 },
-    { selector: ".yellow-box", y: "1vw", x: "-1vw", rotation: -12 },
-    { selector: ".lightgreen-box", y: "-0.5vw", x: "1.5vw", rotation: -0.8 },
+    { selector: ".humbly-priced .pink-box", y: "-1vw", x: "2vw", rotation: -1.5 },
+    { selector: ".humbly-priced .yellow-box", y: "1vw", x: "-1vw", rotation: -12 },
+    { selector: ".humbly-priced .lightgreen-box", y: "-0.5vw", x: "1.5vw", rotation: -0.8 },
   ];
   floatSettings.forEach((config) => {
     const elements = $(config.selector);
@@ -505,7 +505,6 @@ $(function () {
     });
   });
 });
-
 $(function () {
   gsap.to(".rotating-teh-tarik", {
     rotate: -15,
@@ -518,7 +517,23 @@ $(function () {
     },
   });
 });
-
-
-
 // FIFTH SECTION ANIMATIONS END
+// SIXTH SECTION ANIMATIONS
+$(function () {
+
+  // Drop-in animation for television cards
+  gsap.from(".television-card", {
+    y: "-800px",                // Drop from above
+    ease: "bounce.out",     // Playful drop effect
+    duration: 2,
+    stagger: -0.5,          // Delay between each card
+    scrollTrigger: {
+      trigger: ".television-section",
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "play none none none", // Play once on enter
+    },
+  });
+});
+
+// SIXTH SECTION ANIMATIONS END
