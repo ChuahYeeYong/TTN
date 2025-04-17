@@ -25,7 +25,8 @@ h2.large {
   font-family: "Holen Vintage", sans-serif;
   margin: 0;
 }
-h1.hero-title {
+h1.hero-title,
+h2.large.hero-title {
   font-size: 20.83vw;
   padding-right: 13.89vw;
   width: max-content;
@@ -273,7 +274,8 @@ body::-webkit-scrollbar-thumb {
   height: 110vh;
   background-color: var(--yellow);
 }
-h1.hero-title {
+h1.hero-title,
+h2.hero-title {
   animation: scrollLeft 15s linear infinite;
   display: inline-block;
   white-space: nowrap;
@@ -495,7 +497,7 @@ h1.hero-title {
   top: 30%;
 }
 .national-importance .hornbill-bg {
-  animation: slowRotate 60s linear infinite;
+  animation: slowRotateWithX 60s linear infinite;
 }
 .sugar-rain {
   position: absolute;
@@ -924,3 +926,73 @@ img.pouring-photos:not(.person) {
   object-fit: cover;
 }
 /* SIXTH SECTION END */
+/* SEVENTH SECTION */
+.drink-like-no-other {
+  overflow: hidden;
+  margin-bottom: 100vh;
+}
+.drink-heading {
+  text-align: center;
+  margin-block: 4.17vw 2.78vw;
+}
+.drink-like-no-other .bottom-portion {
+  position: relative;
+  display: flex;
+}
+.drink-like-no-other .bottom-portion > div {
+  flex: 1;
+  padding: 3.19vw 4.44vw 11.6vw;
+}
+.drink-like-no-other .bottom-portion .green-box {
+  background-color: #009949;
+}
+.drink-like-no-other .bottom-portion .green-box h3 {
+  padding-left: 1.39vw;
+}
+.drink-like-no-other .bottom-portion .pattern-box {
+  background-color: #009949;
+  background-image: url(./wp-content/uploads/yellow-pattern.svg);
+  background-size: 100%;
+  position: relative;
+}
+.drink-like-no-other .bottom-portion .pattern-box img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+}
+.drink-like-no-other .bottom-portion .red-box {
+  background-color: #d6322f;
+}
+.drink-like-no-other .bottom-portion img {
+  position: absolute;
+}
+.drink-like-no-other .bottom-portion .floating-cup {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1vw;
+}
+.drink-like-no-other .bottom-portion .floating-cup-leaf {
+  left: 45%;
+  bottom: 10%;
+  transform: translateX(-50%) rotate(-20deg);
+  transition: all 0.5s;
+}
+.drink-like-no-other .bottom-portion .floating-cup-starfish {
+  right: 45%;
+  bottom: 30%;
+  transform: translateX(50%) rotate(-20deg);
+  transition: all 0.5s;
+}
+.drink-like-no-other.landed .bottom-portion .floating-cup-leaf {
+  left: 42%;
+  bottom: 20%;
+  transform: translateX(-50%) rotate(-30deg);
+}
+.drink-like-no-other.landed .bottom-portion .floating-cup-starfish {
+  right: 42%;
+  bottom: 38%;
+  transform: translateX(50%) rotate(-10deg);
+}
+/* SEVENTH SECTION END */

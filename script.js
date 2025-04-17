@@ -466,9 +466,24 @@ $(function () {
 // FIFTH SECTION ANIMATIONS
 $(function () {
   const floatSettings = [
-    { selector: ".humbly-priced .pink-box", y: "-1vw", x: "2vw", rotation: -1.5 },
-    { selector: ".humbly-priced .yellow-box", y: "1vw", x: "-1vw", rotation: -12 },
-    { selector: ".humbly-priced .lightgreen-box", y: "-0.5vw", x: "1.5vw", rotation: -0.8 },
+    {
+      selector: ".humbly-priced .pink-box",
+      y: "-1vw",
+      x: "2vw",
+      rotation: -1.5,
+    },
+    {
+      selector: ".humbly-priced .yellow-box",
+      y: "1vw",
+      x: "-1vw",
+      rotation: -12,
+    },
+    {
+      selector: ".humbly-priced .lightgreen-box",
+      y: "-0.5vw",
+      x: "1.5vw",
+      rotation: -0.8,
+    },
   ];
   floatSettings.forEach((config) => {
     const elements = $(config.selector);
@@ -520,13 +535,11 @@ $(function () {
 // FIFTH SECTION ANIMATIONS END
 // SIXTH SECTION ANIMATIONS
 $(function () {
-
-  // Drop-in animation for television cards
   gsap.from(".television-card", {
-    y: "-800px",                // Drop from above
-    ease: "bounce.out",     // Playful drop effect
-    duration: 2,
-    stagger: -0.5,          // Delay between each card
+    y: "-800px",
+    ease: "bounce.out",
+    duration: 1.5,
+    stagger: -0.2,
     scrollTrigger: {
       trigger: ".television-section",
       start: "top bottom",
@@ -535,5 +548,33 @@ $(function () {
     },
   });
 });
-
 // SIXTH SECTION ANIMATIONS END
+// SEVENTH SECTION ANIMATIONS
+$(function () {
+  const triggerSection = document.querySelector(".drink-like-no-other");
+  gsap.from("img.floating-cup", {
+    y: "-100vh",
+    ease: "easeIn",
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: triggerSection,
+      start: "top bottom",
+      end: "bottom 80%",
+      scrub: true,
+      onUpdate: (self) => {
+        if (
+          self.progress === 1 &&
+          !triggerSection.classList.contains("landed")
+        ) {
+          triggerSection.classList.add("landed");
+        } else if (
+          self.progress < 1 &&
+          triggerSection.classList.contains("landed")
+        ) {
+          triggerSection.classList.remove("landed");
+        }
+      },
+    },
+  });
+});
+// SEVENTH SECTION ANIMATIONS END
