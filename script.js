@@ -593,3 +593,45 @@ $(function () {
   });
 });
 // EIGHTH SECTION ANIMATIONS END
+// NINTH SECTION ANIMATIONS
+$(function () {
+  const $cards = $(".staggered-card");
+  const totalCards = $cards.length;
+  const middleIndex = Math.floor(totalCards / 2);
+  const spacing = 5; // horizontal spacing in vw
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".five-gen",
+      start: "top top",
+      end: "+=4000",
+      scrub: true,
+      pin: true,
+    },
+  });
+
+  $cards.each(function (i) {
+    const $card = $(this);
+    const offsetFromCenter = i - middleIndex;
+
+    // Generate a random y offset between -2vh and 2vh
+    const randomY = (Math.random() * 4 - 2).toFixed(2); // value between -2 and 2
+
+    tl.fromTo(
+      $card,
+      {
+        y: "100vh",
+        x: "0vw",
+      },
+      {
+        y: `${randomY}vh`,
+        x: `${offsetFromCenter * spacing}vw`,
+        duration: 1,
+        ease: "power3.out",
+      },
+      i * 0.7
+    );
+  });
+});
+
+// NINTH SECTION ANIMATIONS END
