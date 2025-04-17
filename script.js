@@ -578,3 +578,18 @@ $(function () {
   });
 });
 // SEVENTH SECTION ANIMATIONS END
+// EIGHTH SECTION ANIMATIONS
+$(function () {
+  gsap.from(".gold-standard .bottom-portion .parallax-bg", {
+    y: "80vh",
+    ease: "easeIn",
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: ".gold-standard .bottom-portion",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+// EIGHTH SECTION ANIMATIONS END

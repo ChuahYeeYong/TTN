@@ -237,6 +237,14 @@ body::-webkit-scrollbar-thumb {
   background-repeat: no-repeat;
   position: relative;
 }
+.typewriter-box.beige:before {
+  left: unset;
+  right: -2px;
+  background-image: url(./wp-content/uploads/typewriter-box-top-corner-beige.svg);
+}
+.typewriter-box.beige {
+  background-color: #f6d3b3;
+}
 .typewriter-box.red {
   background-color: #e14d39;
   margin-top: 0;
@@ -253,6 +261,7 @@ body::-webkit-scrollbar-thumb {
   display: inline-flex;
   white-space: pre;
   flex-direction: row;
+  padding: 0.83vw 1.25vw;
 }
 .typewriter-box.small:before {
   height: 1vw;
@@ -929,7 +938,6 @@ img.pouring-photos:not(.person) {
 /* SEVENTH SECTION */
 .drink-like-no-other {
   overflow: hidden;
-  margin-bottom: 100vh;
 }
 .drink-heading {
   text-align: center;
@@ -996,3 +1004,57 @@ img.pouring-photos:not(.person) {
   transform: translateX(50%) rotate(-10deg);
 }
 /* SEVENTH SECTION END */
+/* EIGHTH SECTION */
+.gold-standard {
+  background-color: #c17f33;
+}
+.gold-standard .top-portion {
+  padding: 3.47vw 5.83vw;
+}
+.gold-standard .top-portion .typewriter-box {
+  min-width: 10vw;
+}
+.gold-standard .top-portion .typewriter-box.yellow {
+  rotate: -3deg;
+}
+.gold-standard .top-portion .typewriter-box.beige {
+  left: 3vw;
+}
+.gold-standard .bottom-portion {
+  z-index: 1;
+}
+.gold-standard .bottom-portion h2 {
+  padding: 4.03vw 5.11vw;
+}
+.gold-standard .bottom-portion .text-box .parallax-bg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.12;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.gold-standard .bottom-portion .text-box {
+  margin-left: 50vw;
+  max-width: 22.36vw;
+}
+.gold-standard .bottom-portion .text-box .typewriter-box {
+  rotate: -3deg;
+  margin-bottom: 2vw;
+  align-items: center;
+  gap: 1vw;
+}
+.gold-standard .bottom-portion .text-box .typewriter-box:after {
+  content: "";
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./wp-content/uploads/mouth-vector.webp);
+  width: 2.64vw;
+  height: 3.4vw;
+  order: -1;
+}
+/* EIGHTH SECTION END */
