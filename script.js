@@ -599,12 +599,13 @@ $(function () {
   const totalCards = $cards.length;
   const middleIndex = Math.floor(totalCards / 2);
   const spacing = 5; // horizontal spacing in vw
+  const scrollDistance = "+=5000";
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".five-gen",
       start: "top top",
-      end: "+=4000",
+      end: scrollDistance,
       scrub: true,
       pin: true,
     },
@@ -627,11 +628,28 @@ $(function () {
         y: `${randomY}vh`,
         x: `${offsetFromCenter * spacing}vw`,
         duration: 1,
-        ease: "power3.out",
+        ease: "power5.in",
       },
       i * 0.7
     );
   });
+
+  gsap.fromTo(
+    ".staggered-cards-container",
+    {
+      y: "5%", // The `circles` div starts at 5% of its height on the y-axis
+    },
+    {
+      y: "-5%", // And ends at -5% of its height on the y-axis
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".five-gen",
+        start: "top top",
+        end: scrollDistance,
+        scrub: true,
+      },
+    }
+  );
 });
 
 // NINTH SECTION ANIMATIONS END
