@@ -10,26 +10,6 @@ gsap.ticker.lagSmoothing(0);
 
 // GLOBAL ANIMATIONS
 $(function () {
-  // SPLIT TEXT ANIMATION
-  // $("h1, h2").each(function () {
-  //   const heading = $(this);
-  //   const splitText = new SplitType(this, { types: "lines" });
-  //   const lines = splitText.lines;
-
-  //   gsap.from(lines, {
-  //     y: 30,
-  //     rotation: 30,
-  //     ease: "easeOutExpo",
-  //     duration: 0.6,
-  //     stagger: 0.05,
-  //     scrollTrigger: {
-  //       trigger: heading,
-  //       start: "top bottom",
-  //       once: true,
-  //     },
-  //   });
-  // });
-
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
@@ -140,11 +120,6 @@ $(function () {
   // Configuration for sugar animations
   const sugarAnimations = [
     {
-      element: "#sugar1",
-      path: "#sugar-curve-1",
-      delay: 0, // No delay
-    },
-    {
       element: "#sugar2",
       path: "#sugar-curve-1",
       delay: -0.2, // Delayed start
@@ -157,7 +132,7 @@ $(function () {
     {
       element: "#sugar4",
       path: "#sugar-curve-2",
-      delay: 0.2,
+      delay: 0,
     },
     {
       element: "#sugar5",
@@ -167,17 +142,12 @@ $(function () {
     {
       element: "#sugar6",
       path: "#sugar-curve-3",
-      delay: 0.3, // Delayed start after sugar5
+      delay: 0.1, // Delayed start after sugar5
     },
     {
       element: "#sugar7",
       path: "#sugar-curve-4",
       delay: 0, // Delayed start after sugar5
-    },
-    {
-      element: "#sugar8",
-      path: "#sugar-curve-4",
-      delay: 0.1, // Delayed start after sugar5
     },
   ];
 
@@ -282,6 +252,8 @@ $(function () {
   animateParallax("#lcw", "-3vw", "-5vw");
   animateParallax("#motorbike", "10vw", "0");
   animateParallax("#myvi", "-5vw", "5%", "0");
+  animateParallax("#sugar1", "-15vw", "120vh", "0");
+  animateParallax("#sugar8", "10vw", "100vh", "0");
 });
 // FIRST SECTION ANIMATIONS END
 // SECOND SECTION ANIMATIONS
@@ -651,5 +623,95 @@ $(function () {
     }
   );
 });
-
 // NINTH SECTION ANIMATIONS END
+// TENTH SECTION ANIMATIONS
+$(function () {
+  const $eyeballs = $(".eyeball");
+
+  $(document).on("mousemove", function (e) {
+    $eyeballs.each(function () {
+      const $eye = $(this);
+      const $iris = $eye.find(".iris");
+
+      const eyeOffset = $eye.offset();
+      const eyeCenterX = eyeOffset.left + $eye.width() / 2;
+      const eyeCenterY = eyeOffset.top + $eye.height() / 2;
+
+      const dx = e.pageX - eyeCenterX;
+      const dy = e.pageY - eyeCenterY;
+
+      // Calculate angle and distance
+      const angle = Math.atan2(dy, dx);
+      const distance = Math.min(5, Math.hypot(dx, dy) / 10); // Limit how far the iris can go
+
+      const moveX = Math.cos(angle) * distance;
+      const moveY = Math.sin(angle) * distance;
+
+      $iris.css("transform", `translate(${moveX}px, ${moveY}px)`);
+    });
+  });
+});
+$(function () {
+  ScrollTrigger.create({
+    trigger: ".touching-hands",
+    start: "top top",
+    end: "+=1300",
+    // pin: true,
+    scrub: true,
+    markers: true, // optional: remove in production
+  });
+  function moveHands(id, xAmount, yAmount, rotation) {
+    gsap.from(id, {
+      x: xAmount,
+      y: yAmount,
+      rotate: rotation,
+      scale: "1.03",
+      scrollTrigger: {
+        trigger: ".touching-hands",
+        start: "top 80%",
+        end: "top center",
+        scrub: true,
+      },
+      ease: "easeOutExpo",
+    });
+  }
+
+  moveHands(".left.hand", "-20vw");
+  moveHands(".right.hand", "20vw");
+
+  function scaleStar() {
+    const scrollSettings = {
+      trigger: ".touching-hands",
+      start: "top center",
+      end: "bottom bottom",
+      scrub: true,
+    };
+    gsap.to(".touching-star", {
+      scale: 11,
+      scrollTrigger: scrollSettings,
+      ease: "expo.in",
+    });
+    gsap.to(".touching-star path", {
+      fill: "#d6322f",
+      scrollTrigger: scrollSettings,
+      ease: "expo.in",
+    });
+  }
+  scaleStar();
+});
+$(function () {
+  function chilliMoveY() {
+    gsap.to(".chilli-teh", {
+      y: "-40vh",
+      scrollTrigger: {
+        trigger: ".exploding-lady",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+      },
+      ease: "easeInOutExpo",
+    });
+  }
+  chilliMoveY();
+});
+// TENTH SECTION ANIMATIONS END

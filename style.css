@@ -397,6 +397,14 @@ h2.hero-title {
   will-change: transform;
   transform: translate(-50%, -50%);
 }
+#sugar1 {
+  top: -50%;
+  left: 30vw;
+}
+#sugar8 {
+  top: -50%;
+  left: 2vw;
+}
 /* FIRST SECTION END */
 
 /* SECOND SECTION */
@@ -1129,3 +1137,213 @@ img.pouring-photos:not(.person) {
   width: 100%;
 }
 /* NINTH SECTION END */
+/* TENTH SECTION */
+.proudly-malaysian .top-portion {
+  position: relative;
+  background-color: #ed9fa5;
+  overflow: hidden;
+  padding-bottom: 20vh;
+}
+.proudly-malaysian .top-portion .text-content {
+  padding: 5.14vw 6.11vw 0;
+}
+.proudly-malaysian .text-content h4 {
+  margin-bottom: 1.67vw;
+}
+.proudly-malaysian .head-with-eyeball {
+  opacity: 0;
+  pointer-events: none;
+}
+.proudly-malaysian .line .head-with-eyeball {
+  opacity: 1;
+  pointer-events: auto;
+}
+.proudly-malaysian .head-with-eyeball > img {
+  height: 0.8em;
+}
+.head-with-eyeball .eyeball {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute !important;
+  width: 1.8vw;
+  height: 1.8vw;
+  background: white;
+  border-radius: 50%;
+}
+.head-with-eyeball .left.eyeball {
+  left: 40%;
+  top: 46%;
+}
+.head-with-eyeball .right.eyeball {
+  left: 60%;
+  top: 46%;
+}
+.head-with-eyeball .iris {
+  width: 30%;
+  height: auto;
+  aspect-ratio: 1;
+  background-color: black;
+  border-radius: 50%;
+  transition: transform 0.3s ease-out;
+}
+.touching-hands {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+}
+.touching-hands .hand {
+  height: 62.36vw;
+  width: 50.1vw;
+  object-fit: contain;
+  top: 0;
+}
+.touching-hands .left.hand,
+.touching-hands .left.foreground {
+  left: 0;
+}
+.touching-hands .right.hand,
+.touching-hands .right.foreground {
+  right: 0;
+}
+.touching-hands .foreground {
+  position: absolute;
+  bottom: 0;
+  height: 10vw;
+}
+.touching-hands .left.foreground {
+  width: 34vw;
+}
+.touching-hands .right.foreground {
+  width: 42vw;
+}
+.touching-hands .touching-star {
+  left: 50%;
+  top: 0;
+  position: absolute;
+  transform: translate(-50%, 20%) scale(0);
+  transform-origin: center;
+}
+.proudly-malaysian .bottom-portion {
+  background-color: var(--red);
+  /* overflow-x: hidden; */
+}
+.proudly-malaysian .bottom-portion .text-content {
+  padding: 4vw 6vw;
+  display: flex;
+  gap: 2vw;
+}
+.proudly-malaysian .bottom-portion .text-content p {
+  max-width: 12vw;
+}
+.proudly-malaysian .bottom-portion .single-chilli {
+  position: absolute;
+  z-index: 10;
+  animation: spinningChilli 12s linear infinite;
+}
+@keyframes spinningChilli {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.proudly-malaysian .bottom-portion .single-chilli:nth-child(1) {
+  left: -10%;
+  top: 50%;
+  width: 30vw;
+}
+.proudly-malaysian .bottom-portion .single-chilli:nth-child(2) {
+  right: 30%;
+  top: -10%;
+  width: 24vw;
+}
+.proudly-malaysian .bottom-portion .single-chilli:nth-child(3) {
+  right: 20%;
+  top: 10%;
+  width: 14vw;
+  scale: -1 1;
+}
+.proudly-malaysian .bottom-portion .single-chilli:nth-child(4) {
+  right: 5%;
+  top: 5%;
+  width: 14vw;
+}
+.proudly-malaysian .bottom-portion .exploding-lady {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.proudly-malaysian .bottom-portion .mushroom-cloud {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.proudly-malaysian .bottom-portion .flame {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  animation: flameFlicker 12s infinite ease-in-out;
+  transform-origin: bottom center;
+  object-fit: contain;
+}
+.proudly-malaysian .bottom-portion .left.flame {
+  left: 0;
+  width: 45vw;
+}
+.proudly-malaysian .bottom-portion .right.flame {
+  right: 0;
+  width: 50vw;
+}
+@keyframes flameFlicker {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.97);
+    opacity: 0.98;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.94;
+  }
+  80% {
+    transform: scale(0.96);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.lady-with-flame-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+.proudly-malaysian .bottom-portion .center.flame {
+  /* left: 50%; */
+  top: 0;
+  margin-top: -20%;
+  width: 50vw;
+  z-index: 1;
+  animation: flameFlicker 8s infinite ease-in-out;
+}
+.lady-with-flame-container .chilli-teh {
+  position: absolute;
+  width: 43vw;
+  rotate: -6deg;
+  z-index: 2;
+}
+.lady-with-flame-container .middle-lady {
+  width: 65vw;
+  z-index: 3;
+}
+/* TENTH SECTION END */
