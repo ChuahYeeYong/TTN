@@ -32,7 +32,7 @@ h2.large.hero-title {
   width: max-content;
   white-space: nowrap;
   margin: 2.36vw 0 0;
-  clip-path: inset(-10% 0 10% 0);
+  clip-path: inset(-50% 0 10% 0);
 }
 h1 .line,
 h2 .line {
@@ -41,7 +41,8 @@ h2 .line {
 h2.medium {
   font-size: 10.42vw;
 }
-h2 {
+h2,
+.teh-tarik-malaysian #textpath {
   font-size: 6.94vw;
   font-weight: 400;
   line-height: 0.9;
@@ -104,6 +105,7 @@ body {
   font-family: "Niramit", sans-serif;
   color: var(--raisin-black);
   background-color: var(--yellow);
+  overflow-x: hidden;
   --sb-track-color: white;
   --sb-thumb-color: var(--raisin-black);
   --sb-size: 8px;
@@ -642,7 +644,7 @@ img.sugar-rain:nth-of-type(9) {
 }
 .pouring-cup-container .stream-container {
   position: absolute;
-  width: 7.5vw;
+  width: 7.8vw;
   height: 59.5vw;
   top: -39%;
   left: -99%;
@@ -985,8 +987,8 @@ img.pouring-photos:not(.person) {
   position: absolute;
 }
 .drink-like-no-other .bottom-portion .floating-cup {
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 14.5vw);
+  width: 29vw;
   bottom: 1vw;
 }
 .drink-like-no-other .bottom-portion .floating-cup-leaf {
@@ -1339,7 +1341,7 @@ img.pouring-photos:not(.person) {
 .lady-with-flame-container .chilli-teh {
   position: absolute;
   width: 43vw;
-  rotate: -6deg;
+  /* rotate: -6deg; */
   z-index: 2;
 }
 .lady-with-flame-container .middle-lady {
@@ -1347,3 +1349,72 @@ img.pouring-photos:not(.person) {
   z-index: 3;
 }
 /* TENTH SECTION END */
+/* ELEVENTH SECTION */
+.teh-tarik-malaysian  {
+  overflow: hidden;
+  background-color: var(--orange);
+}
+.teh-tarik-malaysian .top-pattern {
+  height: 4vw;
+  width: 100%;
+  background-image: url(./wp-content/uploads/red-yellow-pattern.svg);
+  background-size: contain;
+  background-repeat: repeat;
+}
+.teh-tarik-malaysian > p {
+  max-width: 30vw;
+  margin: 2vw auto;
+  text-align: center;
+}
+.teh-tarik-malaysian .dining-teh-tarik,
+.teh-tarik-malaysian .bottom-boxes {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+}
+.teh-tarik-malaysian .bottom-boxes > div {
+  border: 1px solid black;
+}
+.teh-tarik-malaysian .bottom-boxes .pink-box {
+  background-color: var(--pink);
+  display: flex;
+}
+.teh-tarik-malaysian .bottom-boxes .pink-box p {
+  max-width: 13ch;
+  margin: 2.57vw 5vw 0 auto;
+}
+.teh-tarik-malaysian .dining-teh-tarik {
+  z-index: 3;
+}
+/* .teh-tarik-malaysian:after {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: block;
+  background-image: url(./wp-content/uploads/eating-on-teh-tarik.webp);
+} */
+.teh-tarik-malaysian .container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  position: relative;
+}
+.teh-tarik-malaysian svg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  overflow: visible;
+  transform: translate(0, 120%); /* Scaling to avoid seeing letter at the start and end */
+}
+.teh-tarik-malaysian textPath {
+  fill: currentColor;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+/* ELEVENTH SECTION END */
