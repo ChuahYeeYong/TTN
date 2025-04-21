@@ -311,53 +311,6 @@ $(function () {
 });
 // THIRD SECTION ANIMATIONS END
 // FOURTH SECTION ANIMATIONS
-// $(function () {
-//   function movingLeaves(id, xAmount, yAmount) {
-//     gsap.from(id, {
-//       x: xAmount,
-//       y: yAmount,
-//       rotate: "30deg",
-//       scale: "1.1",
-//       scrollTrigger: {
-//         trigger: ".pouring-cup-container",
-//         start: "top 80%",
-//         end: "bottom 50%",
-//         scrub: true,
-//       },
-//       ease: "easeInOutExpo",
-//     });
-//   }
-
-//   movingLeaves("#pouring-leaf-1", "-73vw", "-13vw");
-//   movingLeaves("#pouring-leaf-2", "-68vw", "-34.5vw");
-//   movingLeaves("#pouring-leaf-3", "-56vw", "-27.5vw");
-//   movingLeaves("#pouring-leaf-4", "-43vw", "-15vw");
-//   movingLeaves("#pouring-leaf-5", "-30vw", "-7vw");
-//   movingLeaves("#pouring-leaf-6", "-26.3vw", "-12.8vw");
-//   movingLeaves("#pouring-leaf-7", "-15vw", "-26vw");
-//   movingLeaves("#pouring-leaf-8", "-13vw", "-8vw");
-//   movingLeaves("#pouring-leaf-9", "-2.5vw", "-17.5vw");
-//   movingLeaves("#pouring-leaf-10", "3vw", "-18vw");
-//   movingLeaves("#pouring-leaf-11", "8vw", "-24vw");
-
-//   gsap.fromTo(
-//     ".pouring-cup-container",
-//     {
-//       rotate: -24,
-//       transformOrigin: "bottom left",
-//     },
-//     {
-//       rotate: -55,
-//       scrollTrigger: {
-//         trigger: ".pouring-cup-container",
-//         start: "bottom 90%",
-//         end: "bottom 20%",
-//         scrub: true,
-//       },
-//       ease: "easeInOutExpo",
-//     }
-//   );
-// });
 $(function () {
   function movingLeaves(id, xAmount, yAmount) {
     gsap.from(id, {
@@ -715,50 +668,89 @@ $(function () {
 // TENTH SECTION ANIMATIONS END
 // ELEVENTH SECTION ANIMATIONS
 $(function () {
-  gsap.to('.scroll', {
-    autoAlpha:0,
-    duration:0.2,
-    scrollTrigger: {
-        trigger:'.teh-tarik-malaysian',
-        start:'top top',
-        end:'top top-=1',
-        toggleActions: "play none reverse none"
-    }
-})
+  const root = document.querySelector(".teh-tarik-malaysian");
 
-const root = document.querySelector('.teh-tarik-malaysian')
+  // Get the actual text content
+  const textPath = root.querySelector("#textpath");
+  const text = textPath.textContent.trim();
 
-// Get the actual text content
-const textPath = root.querySelector('#textpath')
-const text = textPath.textContent.trim()
+  // Calculate text width using canvas
+  const textPathLength = getTextWidth(text) * 1.25;
 
-// Calculate text width using canvas
-const textPathLength = getTextWidth(text) * 1.25
+  // Calculate final offset percentage
+  const pathLength = root.querySelector("#path").getTotalLength();
+  const finalOffset = -((textPathLength * 100) / pathLength);
 
-// Calculate final offset percentage
-const pathLength = root.querySelector('#path').getTotalLength()
-const finalOffset = -(textPathLength * 100 / pathLength)
-
-gsap.to(textPath, {
+  gsap.to(textPath, {
     attr: { startOffset: finalOffset + "0%" }, // Here we are targeting an attribute value, not a CSS property
-    ease:'none', // Linear movement
+    ease: "none", // Linear movement
     scrollTrigger: {
-        trigger: '.teh-tarik-malaysian',
-        start: 'top top',
-        end: '+=2000',
-        pin: '.teh-tarik-malaysian',
-        scrub: true // Progresses with the scroll
-    }
-}) 
+      trigger: ".teh-tarik-malaysian",
+      start: "top top",
+      end: "+=2000",
+      pin: ".teh-tarik-malaysian",
+      scrub: true, // Progresses with the scroll
+    },
+  });
 
-// UTIL METHOD
-function getTextWidth(text) {
-    const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"))
-    const context = canvas.getContext("2d")
-    const computedStyle = window.getComputedStyle(document.querySelector('#textpath'))
-    context.font = computedStyle.font
-    
-    return context.measureText(text).width
-}
+  // UTIL METHOD
+  function getTextWidth(text) {
+    const canvas =
+      getTextWidth.canvas ||
+      (getTextWidth.canvas = document.createElement("canvas"));
+    const context = canvas.getContext("2d");
+    const computedStyle = window.getComputedStyle(
+      document.querySelector("#textpath")
+    );
+    context.font = computedStyle.font;
+
+    return context.measureText(text).width;
+  }
 });
 // ELEVENTH SECTION ANIMATIONS END
+// THIRTHEENTH SECTION ANIMATIONS
+$(function () {
+  // Pin the whole section
+  ScrollTrigger.create({
+    trigger: ".breaking-text-section",
+    start: "top top",
+    end: "+=500", // Adjust scroll range as needed
+    pin: true,
+    scrub: true,
+  });
+
+  const pairs = [
+    ["#breaking-text-1", "-20vw", "-30vh", -5, "center left"],
+    ["#breaking-text-2", "-25vw", "-15vh", -10, "bottom left"],
+    ["#breaking-text-3", "40vw", "-25vh", 5, "center"],
+    ["#breaking-text-4", "-20vw", "-10vh", -30, "center"],
+    ["#breaking-text-5", "20vw", "-15vh", 10, "center"],
+    ["#breaking-text-6", "-10vw", "-5vh", -50, "center"],
+    ["#breaking-text-7", "20vw", "-5vh", 30, "center"],
+    [".teh-tarik-with-cap", 0, "-70vh", 0, "center"],
+    [".first.breaking-image", "-40vw", "-20vh", 0, "center"],
+    [".second.breaking-image", "30vw", "-10vh", 0, "center"],
+    [".third.breaking-image", "-55vw", "-50vh", 0, "center"],
+    [".fourth.breaking-image", "25vw", "-110vh", 0, "center"],
+    [".fifth.breaking-image", "35vw", "-60vh", 0, "center"],
+    [".sixth.breaking-image", "-35vw", "-90vh", 0, "center"],
+    [".seventh.breaking-image", "0", "-110vh", 0, "center"],
+  ];
+
+  pairs.forEach(([selector, moveX, moveY, rotation, origin]) => {
+    gsap.to(selector, {
+      x: moveX,
+      y: moveY,
+      rotate: rotation,
+      transformOrigin: origin,
+      scrollTrigger: {
+        trigger: ".breaking-text-section",
+        start: "top top",
+        end: "+=500",
+        scrub: true,
+      },
+      ease: "power1.out",
+    });
+  });
+});
+// THIRTHEENTH SECTION ANIMATIONS END

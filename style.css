@@ -38,10 +38,8 @@ h1 .line,
 h2 .line {
   transform-origin: bottom left;
 }
-h2.medium {
-  font-size: 10.42vw;
-}
 h2,
+.breaking-texts-container,
 .teh-tarik-malaysian #textpath {
   font-size: 6.94vw;
   font-weight: 400;
@@ -50,6 +48,10 @@ h2,
   font-family: "Holen Vintage", sans-serif;
   margin: 0;
   overflow: hidden;
+}
+h2.medium,
+.breaking-texts-container {
+  font-size: 10.42vw;
 }
 h3 {
   font-size: 4.17vw;
@@ -989,7 +991,7 @@ img.pouring-photos:not(.person) {
 .drink-like-no-other .bottom-portion .floating-cup {
   left: calc(50% - 14.5vw);
   width: 29vw;
-  bottom: 1vw;
+  bottom: 0;
 }
 .drink-like-no-other .bottom-portion .floating-cup-leaf {
   left: 45%;
@@ -1350,7 +1352,7 @@ img.pouring-photos:not(.person) {
 }
 /* TENTH SECTION END */
 /* ELEVENTH SECTION */
-.teh-tarik-malaysian  {
+.teh-tarik-malaysian {
   overflow: hidden;
   background-color: var(--orange);
 }
@@ -1410,7 +1412,10 @@ img.pouring-photos:not(.person) {
   position: absolute;
   top: 0;
   overflow: visible;
-  transform: translate(0, 120%); /* Scaling to avoid seeing letter at the start and end */
+  transform: translate(
+    0,
+    120%
+  ); /* Scaling to avoid seeing letter at the start and end */
 }
 .teh-tarik-malaysian textPath {
   fill: currentColor;
@@ -1418,3 +1423,49 @@ img.pouring-photos:not(.person) {
   text-transform: uppercase;
 }
 /* ELEVENTH SECTION END */
+/* TWELVETH SECTION */
+/* TWELVETH SECTION END */
+/* THIRTHEENTH SECTION */
+.breaking-text-section .container {
+  height: 100%;
+  width: 100%;
+}
+.breaking-text-section {
+  background-color: #8085b4;
+  min-height: 100vh;
+  min-height: 100lvh;
+  position: relative;
+  overflow: hidden;
+}
+.breaking-texts-container {
+  text-align: center;
+  padding-block: 10vw;
+  left: 0;
+  min-height: 100vh;
+  overflow: visible;
+}
+.breaking-texts-container > div {
+  display: flex;
+  justify-content: center;
+}
+.breaking-texts-container span {
+  position: relative;
+  display: inline-block;
+}
+.breaking-texts-container span:last-of-type {
+  transform-origin: bottom right;
+}
+.breaking-text-section .teh-tarik-with-cap {
+  position: absolute;
+  bottom: -53%;
+  left: calc(50vw - 13.5vw);
+  width: 27vw;
+}
+.breaking-text-section .breaking-image {
+  position: absolute;
+  bottom: -10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 13.89vw;
+}
+/* THIRTHEENTH SECTION END */
