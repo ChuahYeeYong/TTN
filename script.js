@@ -754,3 +754,48 @@ $(function () {
   });
 });
 // THIRTHEENTH SECTION ANIMATIONS END
+// 15TH SECTION ANIMATIONS
+$(function () {
+  ScrollTrigger.create({
+    trigger: '.three-cards-section',
+    start: 'top top',
+    end: '+=2000',
+    pin: true,
+    pinSpacing: true,
+  });
+  gsap.to('.red-card', {
+    clipPath: 'circle(100% at 50% 100%)',
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.pin-spacer:has(.three-cards-section)',
+      start: 'top top',
+      end: '33% top',
+      scrub: true,
+      onUpdate: (self) => {
+        if (self.progress >= 0.5 && !$('.three-cards-section').hasClass('red-active')) {
+          $('.three-cards-section').addClass('red-active');
+        } else if (self.progress < 0.5 && $('.three-cards-section').hasClass('red-active')) {
+          $('.three-cards-section').removeClass('red-active');
+        }
+      }
+    }
+  });
+  gsap.to('.yellow-card', {
+    clipPath: 'circle(100% at 50% 100%)',
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.pin-spacer:has(.three-cards-section)',
+      start: '33% top',
+      end: '66% top',
+      scrub: true,
+      onUpdate: (self) => {
+        if (self.progress >= 0.5 && !$('.three-cards-section').hasClass('yellow-active')) {
+          $('.three-cards-section').addClass('yellow-active');
+        } else if (self.progress < 0.5 && $('.three-cards-section').hasClass('yellow-active')) {
+          $('.three-cards-section').removeClass('yellow-active');
+        }
+      }
+    }
+  });
+});
+// 15TH SECTION ANIMATIONS END

@@ -1549,7 +1549,7 @@ img.pouring-photos:not(.person) {
     transform: translate(-50%, 50%) rotate(0deg);
   }
   100% {
-    transform: translate(-50%,50%) rotate(-360deg);
+    transform: translate(-50%, 50%) rotate(-360deg);
   }
 }
 .into-the-world .bottom-portion .red-box .card {
@@ -1576,3 +1576,140 @@ img.pouring-photos:not(.person) {
   background-size: cover;
 }
 /* 14TH SECTION END */
+/* 15TH SECTION */
+.three-cards-section {
+  position: relative;
+}
+.three-cards-section .large-card {
+  height: 100vh;
+  width: 100%;
+  padding-top: 2.64vw;
+  padding-inline: 9.38vw;
+}
+.three-cards-section .large-card h2 {
+  text-align: center;
+}
+.three-cards-section .green-card {
+  background-color: #33a357;
+}
+.three-cards-section .red-card {
+  position: absolute;
+  top: 0;
+  background-color: var(--red);
+  clip-path: circle(0% at 50% 100%);
+}
+.three-cards-section .yellow-card {
+  position: absolute;
+  top: 0;
+  background-color: var(--yellow);
+  clip-path: circle(0% at 50% 100%);
+  transition: clip-path ease-out 0.3s;
+}
+.three-cards-section .props {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.three-cards-section .props .yellow-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80vw;
+  object-fit: contain;
+}
+.three-cards-section .props .purple-mountain {
+  object-fit: contain;
+  position: absolute;
+  width: 70vw;
+  bottom: 0;
+  right: 0;
+}
+.three-cards-section .props .cup {
+  position: absolute;
+  left: 50%;
+  top: 55vh;
+  transform: translate(-50%, 0);
+  width: 18.75vw;
+}
+.three-cards-section .props .props-images {
+  position: absolute;
+  animation: floatNatural 10s ease-in-out infinite;
+  transition: bottom 0.7s ease-in-out;
+}
+.three-cards-section .props .props-images.alternate {
+  animation: floatNatural 5s ease-in-out infinite;
+}
+@keyframes floatNatural {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+.three-cards-section .first.green-props {
+  right: 15.56vw;
+  bottom: 2.57vw;
+  rotate: -15deg;
+  width: 14vw;
+}
+.three-cards-section .second.green-props {
+  left: 20vw;
+  bottom: 1vw;
+  width: 13vw;
+}
+.three-cards-section .third.green-props {
+  left: 5vw;
+  bottom: 5vw;
+  rotate: -3deg;
+  width: 4.17vw;
+}
+.three-cards-section .first.red-props {
+  right: 7vw;
+  bottom: -3.61vw;
+  width: 9.8vw;
+}
+.three-cards-section .second.red-props {
+  right: 24vw;
+  bottom: 2.6vw;
+  width: 10vw;
+}
+.three-cards-section .third.red-props {
+  left: 16vw;
+  bottom: 2.92vw;
+  width: 15.6vw;
+}
+.three-cards-section .first.yellow-props {
+  right: 18.33vw;
+  bottom: 0;
+  width: 10vw;
+}
+.three-cards-section .second.yellow-props {
+  left: 18vw;
+  bottom: 18.33vw;
+  width: 5.07vw;
+}
+.three-cards-section .third.yellow-props {
+  left: 5vw;
+  bottom: 2vw;
+  width: 7.6vw;
+  rotate: -23deg;
+}
+.three-cards-section.red-active .green-props,
+.three-cards-section:not(.red-active) .red-props,
+.three-cards-section.yellow-active .red-props,
+.three-cards-section:not(.yellow-active) .yellow-props {
+  bottom: -100vh !important;
+}
+/* 15TH SECTION END */
