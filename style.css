@@ -1469,3 +1469,110 @@ img.pouring-photos:not(.person) {
   max-width: 13.89vw;
 }
 /* THIRTHEENTH SECTION END */
+/* 14TH SECTION */
+.into-the-world {
+  background-color: #90cec7;
+  overflow: hidden;
+}
+.into-the-world .top-portion {
+  position: relative;
+  text-align: center;
+  padding-block: 5.5vw;
+}
+.into-the-world .top-portion h3 {
+  padding-inline: 25vw;
+  margin-bottom: 1.5vw;
+}
+.into-the-world .top-portion h2,
+.into-the-world .top-portion h3 {
+  position: relative;
+  z-index: 2;
+}
+.into-the-world .top-portion img {
+  position: absolute;
+}
+.into-the-world .top-portion img.starfish {
+  z-index: 0;
+  width: 12.3vw;
+  left: 10vw;
+  bottom: 5vw;
+}
+.into-the-world .top-portion img.leaf {
+  right: 8.33vw;
+  top: 6.94vw;
+  rotate: 30deg;
+  width: 12.85vw;
+  z-index: 2;
+}
+.into-the-world .bottom-portion {
+  display: flex;
+}
+.into-the-world .bottom-portion > div {
+  flex: 1;
+}
+.into-the-world .bottom-portion .yellow-box {
+  background-color: var(--yellow);
+}
+.into-the-world .bottom-portion .yellow-box h6 {
+  max-width: 25ch;
+  margin: 3.2vw 5.8vw 5.56vw;
+}
+.into-the-world .bottom-portion .yellow-box::after {
+  content: "";
+  display: block;
+  height: 6.94vw;
+  width: 100%;
+  border: 1px solid black;
+  background-image: url(./wp-content/uploads/darkblue-pattern.svg);
+  background-color: #90cec7;
+  background-size: cover;
+}
+.into-the-world .bottom-portion .red-box {
+  background-color: var(--red);
+}
+.into-the-world .bottom-portion .red-box h6 {
+  margin-left: auto;
+  max-width: 18ch;
+  margin: 3.2vw 5.8vw 0 auto;
+}
+.into-the-world .bottom-portion .red-box #spinning-cups {
+  position: absolute;
+  width: 80vw;
+  left: 50%;
+  bottom: -10vw;
+  transform: translate(-50%, 50%);
+  z-index: 2;
+  animation: cupsSlowRotate 30s linear infinite;
+}
+@keyframes cupsSlowRotate {
+  0% {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%,50%) rotate(-360deg);
+  }
+}
+.into-the-world .bottom-portion .red-box .card {
+  position: relative;
+  display: flex;
+  background-color: #f6d3b3;
+  width: fit-content;
+  rotate: -6deg;
+  margin-top: 4vw;
+  margin-left: auto;
+  z-index: 2;
+}
+.into-the-world .bottom-portion .red-box .card h4 {
+  margin: 1.04vw 1.1vw;
+  max-width: 18ch;
+}
+.into-the-world .bottom-portion .red-box .card::after {
+  content: "";
+  display: block;
+  width: 5.28vw;
+  border: 1px solid black;
+  background-image: url(./wp-content/uploads/small-purple-pattern.svg);
+  background-color: var(--yellow);
+  background-size: cover;
+}
+/* 14TH SECTION END */
