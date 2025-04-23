@@ -27,7 +27,7 @@ h2.large {
 }
 h1.hero-title,
 h2.large.hero-title {
-  font-size: 20.83vw;
+  font-size: max(150px, 20.83vw);
   padding-right: 13.89vw;
   width: max-content;
   white-space: nowrap;
@@ -54,8 +54,11 @@ h2.medium,
 .teh-tarik-malaysian #textpath {
   font-size: 10.42vw;
 }
+.teh-tarik-malaysian #textpath {
+  font-size: max(150px, 10.42vw);
+}
 h3 {
-  font-size: 4.17vw;
+  font-size: max(40px, 4.17vw);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -2px;
@@ -63,7 +66,7 @@ h3 {
   margin: 0;
 }
 h4 {
-  font-size: 2.78vw;
+  font-size: max(20px, 2.78vw);
   font-weight: 400;
   line-height: 1.125;
   letter-spacing: -1.5px;
@@ -79,7 +82,7 @@ h5 {
   margin: 0;
 }
 h6 {
-  font-size: 1.67vw;
+  font-size: max(18px, 1.67vw);
   line-height: 1.167;
   font-weight: 700;
   margin: 0;
@@ -100,7 +103,7 @@ a {
   box-sizing: border-box;
 }
 body {
-  font-size: 1.25vw;
+  font-size: max(14px, 1.25vw);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.5px;
@@ -171,27 +174,28 @@ body::-webkit-scrollbar-thumb {
   padding-left: 40px;
   display: flex;
   gap: 40px;
+  height: 100%;
   align-items: center;
 }
 .right-sidebar a:after {
   content: "";
   display: block;
-  height: 3.47vw;
+  height: 100%;
   width: 30px;
   background-image: url(./wp-content/uploads/black-menu-pattern.svg);
   background-size: 300%;
 }
 .right-sidebar .yellow-lightgreen-bg {
-  width: 6.04vw;
+  flex: 2;
   height: 100%;
 }
 .right-sidebar .lightgreen-yellow-bg,
 .right-sidebar .lightblue-purple-bg {
-  width: 3.61vw;
+  flex: 1;
   height: 100%;
 }
 .right-sidebar .pink-purple-bg {
-  flex: 1;
+  flex: 3;
   height: 100%;
 }
 .left-sidebar p,
@@ -277,6 +281,9 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   margin-top: 1vw;
   padding: 0.35vw 1.32vw;
+}
+.mobile-only {
+  display: none;
 }
 /* UTILITY END */
 /* FIRST SECTION */
@@ -394,7 +401,7 @@ h2.hero-title {
 .pinned-hero #tapir {
   left: 10vw;
   bottom: 25vh;
-  width: 12vw;
+  width: max(140px, 12vw);
   rotate: 26deg;
 }
 .pinned-hero #main-green-coconut {
@@ -409,8 +416,8 @@ h2.hero-title {
   font-size: 3vw;
   will-change: transform;
   transform: translate(-50%, -50%);
-  max-width: 10vw;
-  max-height: 10vw;
+  max-width: max(120px, 10vw);
+  max-height: max(120px, 10vw);
 }
 #sugar1 {
   top: -50%;
@@ -479,14 +486,15 @@ h2.hero-title {
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  width: 22.78vw;
+  width: 83%;
   animation: slowRotateWithX 60s linear infinite;
 }
 .pinned-horizontal-section .typewriter-box {
   background-image: url(./wp-content/uploads/face-starfish.webp);
   max-width: 55vw;
-  min-height: 18vw;
-  padding: 2.92vw 11.11vw 1.39vw 3.06vw;
+  min-height: max(260px, 20vw);
+  padding: max(30px, 2.92vw) max(120px, 11.11vw) max(16px, 1.39vw)
+    max(30px, 3.06vw);
   transform: translateX(1vw) rotate(-3deg);
 }
 .pinned-horizontal-section .typewriter-box h3 {
@@ -543,7 +551,7 @@ h2.hero-title {
 }
 .national-importance .yellow-mountain-container .motorbike {
   position: absolute;
-  width: 13vw;
+  width: max(130px, 13vw);
   left: 10vw;
   rotate: -39deg;
   top: 18vh;
@@ -572,6 +580,7 @@ h2.hero-title {
   left: 0;
 }
 .national-importance .hornbill-bg {
+  width: 32.15vw;
   animation: slowRotateWithX 60s linear infinite;
 }
 .sugar-rain {
@@ -814,7 +823,7 @@ img.pouring-photos:not(.person) {
   width: 100%;
 }
 .humbly-priced .text-content {
-  padding: 6.46vw 20.83vw 0 5.83vw;
+  padding: max(60px, 6.46vw) 20.83vw 0 max(80px, 5.83vw);
   margin-bottom: 12.85vw;
 }
 .humbly-priced h4 {
@@ -901,7 +910,7 @@ img.pouring-photos:not(.person) {
   rotate: 12deg;
   left: 50%;
   transform: translateX(-50%);
-  gap: 1.04vw;
+  gap: max(10px, 1.04vw);
   padding: 2.43vw 2.78vw;
 }
 .island-section .yellow-box img {
@@ -1008,6 +1017,7 @@ img.pouring-photos:not(.person) {
 }
 .television-card img {
   object-fit: cover;
+  height: max(30px, 3.78vw);
 }
 /* SIXTH SECTION END */
 /* SEVENTH SECTION */
@@ -1146,7 +1156,7 @@ img.pouring-photos:not(.person) {
 }
 .five-gen > h6 {
   text-align: center;
-  margin-bottom: max(40px,4vw);
+  margin-bottom: max(8vh, 4vw);
 }
 .staggered-cards-container,
 .staggered-card {
@@ -1736,48 +1746,48 @@ img.pouring-photos:not(.person) {
   right: 15.56vw;
   bottom: 2.57vw;
   rotate: -15deg;
-  width: 14vw;
+  width: max(140px, 14vw);
 }
 .three-cards-section .second.green-props {
   left: 20vw;
   bottom: 1vw;
-  width: 13vw;
+  width: max(130px, 13vw);
 }
 .three-cards-section .third.green-props {
   left: 5vw;
   bottom: 5vw;
   rotate: -3deg;
-  width: 4.17vw;
+  width: max(40px, 4.17vw);
 }
 .three-cards-section .first.red-props {
   right: 7vw;
   bottom: -3.61vw;
-  width: 9.8vw;
+  width: max(100px, 9.8vw);
 }
 .three-cards-section .second.red-props {
   right: 24vw;
   bottom: 2.6vw;
-  width: 10vw;
+  width: max(100px, 10vw);
 }
 .three-cards-section .third.red-props {
   left: 16vw;
   bottom: 2.92vw;
-  width: 15.6vw;
+  width: max(150px, 15.6vw);
 }
 .three-cards-section .first.yellow-props {
   right: 18.33vw;
   bottom: 0;
-  width: 10vw;
+  width: max(100px, 10vw);
 }
 .three-cards-section .second.yellow-props {
   left: 18vw;
   bottom: 18.33vw;
-  width: 5.07vw;
+  width: max(50px, 5.07vw);
 }
 .three-cards-section .third.yellow-props {
   left: 5vw;
   bottom: 2vw;
-  width: 7.6vw;
+  width: max(70px, 7.6vw);
   rotate: -23deg;
 }
 .three-cards-section.red-active .green-props,
@@ -1805,7 +1815,7 @@ footer .footer-menu > * {
   padding: 1.1vw 1.5vw;
   border: 1px solid black;
 }
-footer .footer-menu > h3 {
+footer .footer-menu > .left-column {
   width: 28vw;
   background-color: #8085b4;
   padding-left: 3vw;
@@ -1882,3 +1892,342 @@ footer .bottom-portion .right {
   gap: 1.67vw;
 }
 /* FOOTER END */
+
+@media (max-width: 1239px) {
+  .mobile-only {
+    display: block;
+  }
+  /* 1ST SECTION */
+  .left-sidebar,
+  .right-sidebar {
+    height: 8vw;
+  }
+  .right-sidebar {
+    transform: translateY(-100vw);
+  }
+  /* .bouncer {
+    max-width: none;
+    max-height: none;
+  } */
+  h1.hero-title {
+    margin-block: 12vw;
+  }
+  .pinned-hero img#main-teh-tarik,
+  .pinned-hero img#teh-tarik-front {
+    max-height: none;
+    width: 82vw;
+  }
+  .pinned-hero .monkey-container {
+    left: 60%;
+    z-index: -1;
+  }
+  .pinned-hero .monkey-container #monkey {
+    right: 9vw;
+    width: 18vw;
+  }
+  .pinned-hero #lcw {
+    bottom: 45%;
+    width: 30vw;
+  }
+  .pinned-hero #main-plant-right {
+    width: 85vw;
+  }
+  .pinned-hero #main-durian-left,
+  .pinned-hero #main-green-durian-left {
+    width: 100vw;
+  }
+  .pinned-hero #main-green-coconut {
+    width: 50vw;
+  }
+  .pinned-hero #motorbike {
+    width: 20vw;
+  }
+  /* 1ST SECTION END */
+  #teh-tarik-aneh {
+    max-width: none;
+  }
+  .pinned-horizontal-section .middle-section {
+    width: 80vw;
+  }
+  .pinned-horizontal-section .text-content {
+    padding: 10vw;
+  }
+  .unofficial-teh-tarik {
+    bottom: 20%;
+    right: 12vw;
+  }
+  .unofficial-teh-tarik img.unofficial-teh-tarik-img {
+    width: 48vw;
+  }
+  .national-importance {
+    min-height: 100vh;
+    min-height: 100lvh;
+  }
+  .national-importance .text-content {
+    padding: max(50px, 5.56vw) max(100px, 10.76vw);
+  }
+  .national-importance .yellow-mountain-container {
+    position: absolute;
+  }
+  .national-importance .yellow-mountain-container .motorbike {
+    top: 10%;
+  }
+  .humbly-priced {
+    height: 100vh;
+    height: 100lvh;
+  }
+  .island-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .island-section .text-box {
+    max-width: 220px;
+    padding: 30px;
+  }
+  .island-section .pink-box {
+    left: 23vw;
+    bottom: 50vh;
+  }
+  .island-section .lightgreen-box {
+    right: 30%;
+    top: unset;
+    bottom: 7vh;
+  }
+  .island-section .yellow-box {
+    top: unset;
+    bottom: 30vh;
+  }
+  .humbly-priced .rotating-teh-tarik {
+    object-fit: cover;
+  }
+  .television-section {
+    height: 100vh;
+    height: 100lvh;
+  }
+  .television-section > h4 {
+    margin-block: 14vh;
+    margin-block: 14lvh;
+  }
+  .drink-heading {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 26px;
+  }
+  .drink-like-no-other .bottom-portion {
+    flex-direction: column;
+  }
+  .drink-like-no-other .bottom-portion .pattern-box {
+    order: -1;
+  }
+  .drink-like-no-other .bottom-portion > div {
+    display: flex;
+    align-items: center;
+    height: 30vh;
+    height: 30lvh;
+    flex: none;
+    padding: 0 20vw;
+  }
+  .drink-like-no-other .bottom-portion .floating-cup {
+    left: calc(50% - 25vw);
+    width: 50vw;
+    bottom: unset;
+    top: -26vh;
+    top: -26lvh;
+  }
+  .drink-like-no-other .bottom-portion .floating-cup-leaf,
+  .drink-like-no-other.landed .bottom-portion .floating-cup-leaf {
+    bottom: calc(10% + 60vh);
+  }
+  .drink-like-no-other .bottom-portion .floating-cup-starfish,
+  .drink-like-no-other.landed .bottom-portion .floating-cup-starfish {
+    bottom: calc(30% + 60vh);
+  }
+  .gold-standard .top-portion,
+  .gold-standard .bottom-portion h2 {
+    padding-inline: 20vw;
+  }
+  .gold-standard .bottom-portion .text-box .parallax-bg {
+    bottom: 0;
+    top: unset;
+  }
+  .five-gen {
+    padding-block: 30vh;
+  }
+  .staggered-cards-container,
+  .staggered-card {
+    height: 40vh;
+  }
+  .staggered-card {
+    width: 35vw;
+  }
+  .staggered-card h4 {
+    padding: 20px 20px 0;
+  }
+  .proudly-malaysian .top-portion .text-content {
+    padding: 12vw 12vw 0;
+  }
+  .touching-hands .hand {
+    top: 17%;
+    position: absolute;
+  }
+  .touching-hands .touching-star {
+    top: 0;
+  }
+  .proudly-malaysian .bottom-portion .text-content {
+    padding: 4vw 20vw;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .proudly-malaysian .bottom-portion .text-content p {
+    max-width: 50%;
+  }
+  .teh-tarik-malaysian .dining-teh-tarik,
+  .teh-tarik-malaysian .bottom-boxes {
+    gap: 0;
+  }
+  .teh-tarik-malaysian .dining-teh-tarik {
+    display: none;
+  }
+  .teh-tarik-malaysian .bottom-boxes:before {
+    content: "";
+    width: 100%;
+    height: 30vh;
+    height: 30lvh;
+    background-image: url(./wp-content/uploads/eating-on-teh-tarik.webp);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+  }
+  .bottom-boxes .yellow-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+  }
+  .bottom-boxes .yellow-box img {
+    width: 37vw;
+  }
+  .teh-tarik-malaysian .bottom-boxes .pink-box p {
+    margin: 20%;
+  }
+  .breaking-texts-container {
+    font-size: 10.42vw !important;
+    padding-block: 40vh;
+    padding-block: 40lvh;
+  }
+  .into-the-world .top-portion {
+    padding-bottom: 50vw;
+  }
+  .into-the-world .bottom-portion:before {
+    content: "";
+    background-image: url(./wp-content/uploads/spinning-cups.webp);
+    background-size: cover;
+    height: 80vw;
+    width: 80vw;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    animation: cupsSlowRotateCenter 30s linear infinite;
+  }
+  @keyframes cupsSlowRotateCenter {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+  .into-the-world .bottom-portion .red-box #spinning-cups {
+    display: none;
+  }
+  .into-the-world .bottom-portion {
+    flex-direction: column;
+  }
+  .into-the-world .bottom-portion > div {
+    z-index: 2;
+    padding-inline: 20vw;
+  }
+  .into-the-world .bottom-portion .yellow-box::after {
+    display: none;
+  }
+  .into-the-world .bottom-portion .red-box h6 {
+    margin: unset;
+  }
+  .into-the-world .bottom-portion h6 {
+    margin: 3.2vw 5.8vw 5.56vw !important;
+  }
+  .into-the-world .bottom-portion .red-box .card {
+    margin-bottom: 7vw;
+  }
+  .three-cards-section .large-card {
+    padding: 10vw 10vw 0;
+  }
+  .three-cards-section .props .cup {
+    width: 60vw;
+  }
+  .three-cards-section .props img:not(.cup) {
+    z-index: 2;
+  }
+  footer .footer-logo {
+    padding: 3vw 10vw;
+  }
+  footer .footer-menu {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  }
+  footer .footer-menu .left-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-row: span 3;
+    padding: 3vw 10vw;
+  }
+  footer .bottom-portion {
+    display: none;
+  }
+  footer .footer-menu > a {
+    aspect-ratio: 1.3;
+    padding: 3vw;
+  }
+  footer .footer-menu > a:after {
+    right: 7vw;
+    height: 15%;
+    width: auto;
+    aspect-ratio: 1;
+    bottom: 3vw;
+  }
+  footer .footer-menu a img {
+    height: 30%;
+  }
+  footer .footer-menu .left-column .mobile-only {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  footer .footer-menu .left-column .mobile-only .center {
+    margin-block: auto 20px;
+  }
+  footer .footer-menu .left-column .mobile-only .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .social-media-icons {
+    display: flex;
+    gap: 14px;
+    margin-block: 20px;
+  }
+  footer .footer-menu .social-media-icons a img {
+    height: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .pinned-hero .monkey-container {
+    bottom: 16vh;
+  }
+}

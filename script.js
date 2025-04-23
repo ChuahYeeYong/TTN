@@ -344,7 +344,7 @@ $(function () {
 
   animateParallax(".national-green-mountain", "-15vw");
   animateParallax(".national-blue-mountain", "14vw");
-  animateParallax(".yellow-mountain-container .motorbike", "6vw", "-12vh");
+  animateParallax(".yellow-mountain-container .motorbike", "70%", "-70%");
 });
 // THIRD SECTION ANIMATIONS END
 // FOURTH SECTION ANIMATIONS
@@ -542,8 +542,10 @@ $(function () {
 // SEVENTH SECTION ANIMATIONS END
 // EIGHTH SECTION ANIMATIONS
 $(function () {
+  const yValue = window.innerWidth < 1240 ? "20vh" : "80vh";
+
   gsap.from(".gold-standard .bottom-portion .parallax-bg", {
-    y: "80vh",
+    y: yValue,
     ease: "easeIn",
     duration: 1.5,
     scrollTrigger: {
@@ -688,9 +690,10 @@ $(function () {
   scaleStar();
 });
 $(function () {
+  const yValue = window.innerWidth < 1240 ? "-20vh" : "-40vh";
   function chilliMoveY() {
     gsap.to(".chilli-teh", {
-      y: "-40vh",
+      y: yValue,
       scrollTrigger: {
         trigger: ".exploding-lady",
         start: "center bottom",
@@ -748,6 +751,7 @@ $(function () {
 // THIRTHEENTH SECTION ANIMATIONS
 $(function () {
   // Pin the whole section
+  const yValue = window.innerWidth < 1240 ? "-100vh" : "-70vh";
   ScrollTrigger.create({
     trigger: ".breaking-text-section",
     start: "top top",
@@ -764,7 +768,7 @@ $(function () {
     ["#breaking-text-5", "20vw", "-15vh", 10, "center"],
     ["#breaking-text-6", "-10vw", "-5vh", -50, "center"],
     ["#breaking-text-7", "20vw", "-5vh", 30, "center"],
-    [".teh-tarik-with-cap", 0, "-70vh", 0, "center"],
+    [".teh-tarik-with-cap", 0, yValue, 0, "center"],
     [".first.breaking-image", "-40vw", "-20vh", 0, "center"],
     [".second.breaking-image", "30vw", "-10vh", 0, "center"],
     [".third.breaking-image", "-55vw", "-50vh", 0, "center"],
@@ -801,7 +805,7 @@ $(function () {
     pinSpacing: true,
   });
   gsap.to(".red-card", {
-    clipPath: "circle(100% at 50% 100%)",
+    clipPath: "circle(150% at 50% 100%)",
     ease: "power2.inOut",
     scrollTrigger: {
       trigger: ".pin-spacer:has(.three-cards-section)",
@@ -824,7 +828,7 @@ $(function () {
     },
   });
   gsap.to(".yellow-card", {
-    clipPath: "circle(100% at 50% 100%)",
+    clipPath: "circle(150% at 50% 100%)",
     ease: "power2.inOut",
     scrollTrigger: {
       trigger: ".pin-spacer:has(.three-cards-section)",
