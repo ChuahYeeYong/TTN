@@ -101,6 +101,41 @@ $(function () {
 });
 // GLOBAL ANIMATIONS END
 
+let resizeTimeout;
+
+function debounceResize(callback, delay = 300) {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(callback, delay);
+}
+
+function killAllAnimations() {
+  // Kill all ScrollTriggers
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+  // Kill all GSAP tweens and timelines
+  gsap.globalTimeline.clear();
+  gsap.killTweensOf("*");
+
+  // Optional: remove classes or reset styles if needed
+  document
+    .querySelectorAll(".typewriter-initialized, .active, .landed, .poured")
+    .forEach((el) => {
+      el.classList.remove(
+        "typewriter-initialized",
+        "active",
+        "landed",
+        "poured"
+      );
+    });
+}
+
+window.addEventListener("resize", () => {
+  debounceResize(() => {
+    // killAllAnimations();
+    window.location.reload(); // Or call your init functions again instead of reloading
+  }, 300);
+});
+
 // FIRST SECTION ANIMATIONS
 $(function () {
   // Create pin for the hero section
@@ -251,6 +286,7 @@ $(function () {
   animateParallax("#main-green-coconut", "-2vw");
   animateParallax("#lcw", "-3vw", "-5vw");
   animateParallax("#motorbike", "10vw", "0");
+  animateParallax("#tapir", "10vw", "8vh", "0.5rad");
   animateParallax("#myvi", "-5vw", "5%", "0");
   animateParallax("#sugar1", "-15vw", "120vh", "0");
   animateParallax("#sugar8", "10vw", "100vh", "0");
@@ -308,6 +344,7 @@ $(function () {
 
   animateParallax(".national-green-mountain", "-15vw");
   animateParallax(".national-blue-mountain", "14vw");
+  animateParallax(".yellow-mountain-container .motorbike", "6vw", "-12vh");
 });
 // THIRD SECTION ANIMATIONS END
 // FOURTH SECTION ANIMATIONS
@@ -329,17 +366,17 @@ $(function () {
   }
 
   // Animate leaves
-  movingLeaves("#pouring-leaf-1", "-73vw", "-43vw");
-  movingLeaves("#pouring-leaf-2", "-68vw", "-64.5vw");
-  movingLeaves("#pouring-leaf-3", "-56vw", "-47.5vw");
-  movingLeaves("#pouring-leaf-4", "-43vw", "-35vw");
-  movingLeaves("#pouring-leaf-5", "-30vw", "-27vw");
-  movingLeaves("#pouring-leaf-6", "-26.3vw", "-32.8vw");
-  movingLeaves("#pouring-leaf-7", "-15vw", "-46vw");
-  movingLeaves("#pouring-leaf-8", "-13vw", "-28vw");
-  movingLeaves("#pouring-leaf-9", "-2.5vw", "-37.5vw");
-  movingLeaves("#pouring-leaf-10", "3vw", "-38vw");
-  movingLeaves("#pouring-leaf-11", "8vw", "-44vw");
+  movingLeaves("#pouring-leaf-1", "-53vw", "-43vw");
+  movingLeaves("#pouring-leaf-2", "-48vw", "-64.5vw");
+  movingLeaves("#pouring-leaf-3", "-36vw", "-47.5vw");
+  movingLeaves("#pouring-leaf-4", "-23vw", "-35vw");
+  movingLeaves("#pouring-leaf-5", "-20vw", "-27vw");
+  movingLeaves("#pouring-leaf-6", "-16.3vw", "-32.8vw");
+  movingLeaves("#pouring-leaf-7", "-5vw", "-46vw");
+  movingLeaves("#pouring-leaf-8", "-3vw", "-28vw");
+  movingLeaves("#pouring-leaf-9", "7.5vw", "-37.5vw");
+  movingLeaves("#pouring-leaf-10", "13vw", "-38vw");
+  movingLeaves("#pouring-leaf-11", "18vw", "-44vw");
 
   // Delay control for class toggle
   let canAddPoured = true;
@@ -638,7 +675,7 @@ $(function () {
       scrub: true,
     };
     gsap.to(".touching-star", {
-      scale: 11,
+      scale: 14,
       scrollTrigger: scrollSettings,
       ease: "expo.in",
     });
@@ -675,7 +712,7 @@ $(function () {
   const text = textPath.textContent.trim();
 
   // Calculate text width using canvas
-  const textPathLength = getTextWidth(text) * 1.25;
+  const textPathLength = getTextWidth(text) * 1;
 
   // Calculate final offset percentage
   const pathLength = root.querySelector("#path").getTotalLength();
@@ -757,45 +794,57 @@ $(function () {
 // 15TH SECTION ANIMATIONS
 $(function () {
   ScrollTrigger.create({
-    trigger: '.three-cards-section',
-    start: 'top top',
-    end: '+=2000',
+    trigger: ".three-cards-section",
+    start: "top top",
+    end: "+=2000",
     pin: true,
     pinSpacing: true,
   });
-  gsap.to('.red-card', {
-    clipPath: 'circle(100% at 50% 100%)',
-    ease: 'power2.inOut',
+  gsap.to(".red-card", {
+    clipPath: "circle(100% at 50% 100%)",
+    ease: "power2.inOut",
     scrollTrigger: {
-      trigger: '.pin-spacer:has(.three-cards-section)',
-      start: 'top top',
-      end: '33% top',
+      trigger: ".pin-spacer:has(.three-cards-section)",
+      start: "top top",
+      end: "33% top",
       scrub: true,
       onUpdate: (self) => {
-        if (self.progress >= 0.5 && !$('.three-cards-section').hasClass('red-active')) {
-          $('.three-cards-section').addClass('red-active');
-        } else if (self.progress < 0.5 && $('.three-cards-section').hasClass('red-active')) {
-          $('.three-cards-section').removeClass('red-active');
+        if (
+          self.progress >= 0.5 &&
+          !$(".three-cards-section").hasClass("red-active")
+        ) {
+          $(".three-cards-section").addClass("red-active");
+        } else if (
+          self.progress < 0.5 &&
+          $(".three-cards-section").hasClass("red-active")
+        ) {
+          $(".three-cards-section").removeClass("red-active");
         }
-      }
-    }
+      },
+    },
   });
-  gsap.to('.yellow-card', {
-    clipPath: 'circle(100% at 50% 100%)',
-    ease: 'power2.inOut',
+  gsap.to(".yellow-card", {
+    clipPath: "circle(100% at 50% 100%)",
+    ease: "power2.inOut",
     scrollTrigger: {
-      trigger: '.pin-spacer:has(.three-cards-section)',
-      start: '33% top',
-      end: '66% top',
+      trigger: ".pin-spacer:has(.three-cards-section)",
+      start: "33% top",
+      end: "66% top",
       scrub: true,
       onUpdate: (self) => {
-        if (self.progress >= 0.5 && !$('.three-cards-section').hasClass('yellow-active')) {
-          $('.three-cards-section').addClass('yellow-active');
-        } else if (self.progress < 0.5 && $('.three-cards-section').hasClass('yellow-active')) {
-          $('.three-cards-section').removeClass('yellow-active');
+        if (
+          self.progress >= 0.5 &&
+          !$(".three-cards-section").hasClass("yellow-active")
+        ) {
+          $(".three-cards-section").addClass("yellow-active");
+        } else if (
+          self.progress < 0.5 &&
+          $(".three-cards-section").hasClass("yellow-active")
+        ) {
+          $(".three-cards-section").removeClass("yellow-active");
         }
-      }
-    }
+      },
+    },
   });
 });
 // 15TH SECTION ANIMATIONS END
