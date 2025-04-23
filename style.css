@@ -41,7 +41,7 @@ h2 .line {
 h2,
 .breaking-texts-container,
 .teh-tarik-malaysian #textpath {
-  font-size: 6.94vw;
+  font-size: max(35px, 6.94vw);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -4px;
@@ -75,7 +75,7 @@ h4 {
 }
 h5 {
   font-family: "Holen Vintage", sans-serif;
-  font-size: 1.67vw;
+  font-size: max(16px, 1.67vw);
   font-weight: 700;
   line-height: 1.167;
   letter-spacing: -0.5px;
@@ -157,7 +157,7 @@ body::-webkit-scrollbar-thumb {
 }
 .left-sidebar p {
   height: 100%;
-  padding-inline: 1.46vw;
+  padding-inline: max(15px, 1.46vw);
   display: flex;
   align-items: center;
 }
@@ -282,7 +282,8 @@ body::-webkit-scrollbar-thumb {
   margin-top: 1vw;
   padding: 0.35vw 1.32vw;
 }
-.mobile-only {
+.mobile-only,
+.phone-only {
   display: none;
 }
 /* UTILITY END */
@@ -445,6 +446,7 @@ h2.hero-title {
 .pinned-horizontal-section .left-section {
   background-image: url(./wp-content/uploads/recognise-green-bg.webp);
   width: 100vw;
+  z-index: 10;
 }
 .pinned-horizontal-section .text-content {
   display: flex;
@@ -573,6 +575,7 @@ h2.hero-title {
 .national-importance .hornbill-beak {
   height: 100%;
   width: 100%;
+  object-fit: contain;
 }
 .national-importance .hornbill-beak {
   position: absolute;
@@ -588,10 +591,10 @@ h2.hero-title {
   top: -10vw;
 }
 .sugar-rain.size-1 {
-  width: 10vw;
+  width: max(80px, 10vw);
 }
 .sugar-rain.size-2 {
-  width: 7vw;
+  width: max(45px, 7vw);
 }
 .sugar-rain.speed-1 {
   animation: rainDrop 13s linear infinite;
@@ -644,7 +647,7 @@ img.sugar-rain:nth-of-type(9) {
 /* FOURTH SECTION */
 .that-one-company {
   background-color: var(--orange);
-  padding-top: 3.33vw;
+  padding-top: max(30px, 3.33vw);
   position: relative;
   overflow: hidden;
   /* background-image: url(./wp-content/uploads/that-one-company-bg.webp); */
@@ -697,7 +700,7 @@ img.sugar-rain:nth-of-type(9) {
   position: absolute;
   left: 25%;
   top: 20%;
-  max-width: 7vw;
+  max-width: max(40px, 7vw);
 }
 .pouring-cup-container img:first-child,
 .pouring-cup-container .cover-cup {
@@ -1071,12 +1074,14 @@ img.pouring-photos:not(.person) {
   bottom: 10%;
   transform: translateX(-50%) rotate(-20deg);
   transition: all 0.5s;
+  width: 22vw;
 }
 .drink-like-no-other .bottom-portion .floating-cup-starfish {
   right: 45%;
   bottom: 30%;
   transform: translateX(50%) rotate(-20deg);
   transition: all 0.5s;
+  width: 9.4vw;
 }
 .drink-like-no-other.landed .bottom-portion .floating-cup-leaf {
   left: 42%;
@@ -1094,7 +1099,7 @@ img.pouring-photos:not(.person) {
   background-color: #c17f33;
 }
 .gold-standard .top-portion {
-  padding: 3.47vw 5.83vw;
+  padding: max(30px, 3.47vw) 5.83vw;
 }
 .gold-standard .top-portion .typewriter-box {
   min-width: 10vw;
@@ -1140,8 +1145,8 @@ img.pouring-photos:not(.person) {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(./wp-content/uploads/mouth-vector.webp);
-  width: 2.64vw;
-  height: 3.4vw;
+  width: max(24px, 2.64vw);
+  height: max(32px, 3.4vw);
   order: -1;
 }
 /* EIGHTH SECTION END */
@@ -1194,8 +1199,8 @@ img.pouring-photos:not(.person) {
 .staggered-card:nth-child(5) {
   rotate: -1deg;
 }
-.staggered-card:nth-child(6) {
-}
+/* .staggered-card:nth-child(6) {
+} */
 .staggered-card:nth-child(7) {
   rotate: 1deg;
 }
@@ -1440,7 +1445,7 @@ img.pouring-photos:not(.person) {
   background-color: var(--orange);
 }
 .teh-tarik-malaysian .top-pattern {
-  height: 4vw;
+  height: max(30px, 4vw);
   width: 100%;
   background-image: url(./wp-content/uploads/red-yellow-pattern.svg);
   background-size: contain;
@@ -1652,7 +1657,7 @@ img.pouring-photos:not(.person) {
 .into-the-world .bottom-portion .red-box .card::after {
   content: "";
   display: block;
-  width: 5.28vw;
+  width: max(50px, 5.28vw);
   border: 1px solid black;
   background-image: url(./wp-content/uploads/small-purple-pattern.svg);
   background-color: var(--yellow);
@@ -1800,6 +1805,7 @@ img.pouring-photos:not(.person) {
 /* FOOTER */
 footer {
   background-color: white;
+  overflow: hidden;
 }
 footer .top-portion {
   padding-inline: 3vw;
@@ -1960,11 +1966,11 @@ footer .bottom-portion .right {
     width: 48vw;
   }
   .national-importance {
-    min-height: 100vh;
-    min-height: 100lvh;
+    min-height: max(750px, 100vh);
+    min-height: max(750px, 100lvh);
   }
   .national-importance .text-content {
-    padding: max(50px, 5.56vw) max(100px, 10.76vw);
+    padding: max(50px, 5.56vw) max(40px, 10.76vw);
   }
   .national-importance .yellow-mountain-container {
     position: absolute;
@@ -2178,7 +2184,7 @@ footer .bottom-portion .right {
   }
   footer .footer-menu {
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(3, 1fr) / repeat(2, 50%);
   }
   footer .footer-menu .left-column {
     display: flex;
@@ -2195,14 +2201,14 @@ footer .bottom-portion .right {
     padding: 3vw;
   }
   footer .footer-menu > a:after {
-    right: 7vw;
-    height: 15%;
+    right: max(40px,7vw);
+    height: max(30px,15%);
     width: auto;
     aspect-ratio: 1;
     bottom: 3vw;
   }
   footer .footer-menu a img {
-    height: 30%;
+    height: max(55px,30%);
   }
   footer .footer-menu .left-column .mobile-only {
     display: flex;
@@ -2227,7 +2233,264 @@ footer .bottom-portion .right {
   }
 }
 @media (max-width: 767px) {
+  .phone-only {
+    display: block;
+  }
+  h1,
+  h2.large {
+    font-size: 14vw;
+    letter-spacing: 0;
+  }
+  h2,
+  .breaking-texts-container,
+  .teh-tarik-malaysian #textpath {
+    letter-spacing: 0;
+  }
+  .left-sidebar img:first-child {
+    height: 100%;
+  }
+  .left-sidebar,
+  .right-sidebar {
+    height: 42px;
+  }
   .pinned-hero .monkey-container {
     bottom: 16vh;
+  }
+  .pinned-hero #main-durian-left,
+  .pinned-hero #main-green-durian-left {
+    width: 160vw;
+    left: -50vw;
+  }
+  .pinned-hero #main-plant-right {
+    width: 145vw;
+  }
+  .pinned-hero #tapir {
+    bottom: 20vh;
+  }
+  #sugar1 {
+    top: -110%;
+    left: 50vw;
+  }
+  #sugar8 {
+    top: -100%;
+    left: 16vw;
+  }
+  .pinned-hero img#main-teh-tarik,
+  .pinned-hero img#teh-tarik-front {
+    scale: 1.2;
+  }
+  #motion-path {
+    scale: 2;
+  }
+  .pinned-horizontal-section .text-content {
+    padding: 90px 60px 0;
+  }
+  .pinned-horizontal-section .typewriter-box {
+    max-width: none;
+    /* padding-bottom: 200px; */
+    background-size: 50%;
+    background-position: bottom right;
+  }
+  .pinned-horizontal-section small {
+    margin-top: 10vh;
+  }
+  .pinned-horizontal-section .middle-section {
+    width: 70vh;
+    width: 70lvh;
+  }
+  .unofficial-teh-tarik {
+    bottom: 10vh;
+    bottom: 10lvh;
+  }
+  .national-importance .text-content {
+    padding-inline: 40px;
+  }
+  @keyframes rainDrop {
+    0% {
+      transform: translateY(0) rotate(-20deg);
+    }
+    50% {
+      transform: translateY(60vh) rotate(0);
+    }
+    100% {
+      transform: translateY(120vh) rotate(20deg);
+    }
+  }
+  .national-importance .hornbill-container {
+    width: 100vw;
+    height: 110vw;
+  }
+  .national-importance .yellow-mountain {
+    width: 160vw;
+  }
+  .sugar-rain {
+    top: -20vh;
+  }
+  .national-importance .hornbill-bg {
+    width: 72vw;
+    top: -120%;
+  }
+  .that-one-company {
+    display: flex;
+    flex-direction: column;
+  }
+  .that-one-company .top-portion {
+    padding-inline: 50px;
+  }
+  .that-one-company h4 {
+    max-width: 78vw;
+  }
+  .pouring-cup-container {
+    top: 300px;
+    right: -30%;
+  }
+  .that-one-company .bottom-portion h2 {
+    margin-top: 50vw;
+  }
+  .bottom-boxes {
+    display: flex;
+    margin-top: 450px;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bottom-boxes > div {
+    width: 100%;
+    height: 30vh;
+    height: 30lvh;
+    margin: 0 !important;
+  }
+  img.pouring-photos {
+    bottom: 60vh;
+    bottom: 60lvh;
+    width: 200vw;
+    left: -50%;
+  }
+  .pouring-cup-container .stream-container {
+    width: 16.5vw;
+  }
+  .pouring-cup-container img:first-child,
+  .pouring-cup-container .cover-cup {
+    width: 35vw;
+  }
+  .bottom-boxes .red-box img:first-child {
+    width: 54vw;
+    top: -10%;
+  }
+  .bottom-portion .purple-card {
+    width: 120px;
+    top: 25%;
+  }
+  .humbly-priced {
+    height: auto;
+  }
+  .island-section {
+    position: relative;
+    margin-top: 480px;
+  }
+  .island-section .pink-box {
+    bottom: 40vh;
+  }
+  .island-section .yellow-box {
+    bottom: 24vh;
+  }
+  .television-section {
+    height: 70vh;
+    height: 70lvh;
+    /* background-image: url(./wp-content/uploads/television-mobile-bg.webp); */
+  }
+  .television-frame {
+    scale: 1.3;
+    left: 5%;
+  }
+  .television-card h4 {
+    font-size: 4vw;
+  }
+  .drink-like-no-other .bottom-portion .floating-cup-starfish,
+  .drink-like-no-other .bottom-portion .floating-cup-leaf {
+    display: none;
+  }
+  .drink-like-no-other .bottom-portion .floating-cup {
+    top: -4vh;
+    top: -4lvh;
+  }
+  .gold-standard .top-portion h4 {
+    font-size: 3vw;
+    letter-spacing: 0;
+  }
+  .gold-standard .bottom-portion .text-box {
+    margin-left: 20vw;
+    max-width: 60vw;
+    margin-bottom: 30vh;
+  }
+  .five-gen {
+    background-image: url(./wp-content/uploads/five-gen-mobile-bg.webp);
+  }
+  .staggered-card {
+    width: auto;
+    aspect-ratio: 0.7;
+  }
+  .proudly-malaysian .head-with-eyeball {
+    display: none !important;
+  }
+  .touching-hands .touching-star {
+    transform: translate(-50%, -4%) scale(0.1);
+  }
+  .teh-tarik-malaysian > p {
+    max-width: 50vw;
+    margin: 22vw auto;
+  }
+  .teh-tarik-malaysian .bottom-boxes {
+    margin-top: 200px;
+    flex-direction: row;
+  }
+  .teh-tarik-malaysian .bottom-boxes:before {
+    background-position: 30%;
+  }
+  .teh-tarik-malaysian .container {
+    height: 90vh;
+  }
+  .teh-tarik-malaysian #textpath {
+    font-size: 300px;
+  }
+  .breaking-text-section {
+    min-height: 0;
+  }
+  .breaking-texts-container {
+    font-size: 8.5vw !important;
+    padding-block: 30vh;
+    min-height: 0;
+  }
+  .breaking-text-section .teh-tarik-with-cap {
+    width: 37vw;
+    left: calc(50vw - 18.5vw);
+  }
+  .breaking-text-section .breaking-image {
+    max-width: 80px !important;
+  }
+  .into-the-world .top-portion {
+    padding-block: 60px 300px;
+  }
+  .into-the-world .top-portion h3 {
+    font-size: 20px;
+    text-wrap-style: pretty;
+    margin-bottom: 20px;
+  }
+  .into-the-world .bottom-portion:before {
+    width: 130vw;
+    height: 130vw;
+  }
+  .three-cards-section .large-card {
+    padding: 100px 60px 0;
+  }
+  footer .footer-menu .left-column h3 {
+    font-size: 24px;
+  }
+  footer .footer-menu .left-column .mobile-only .center {
+    font-size: 10px;
+  }
+  footer .footer-menu > a {
+    padding-right: 20%;
+    aspect-ratio: unset;
   }
 }

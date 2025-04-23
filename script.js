@@ -498,7 +498,7 @@ $(function () {
 // SIXTH SECTION ANIMATIONS
 $(function () {
   gsap.from(".television-card", {
-    y: "-800px",
+    y: "-56vw",
     ease: "bounce.out",
     duration: 1.5,
     stagger: -0.2,
@@ -559,10 +559,11 @@ $(function () {
 // EIGHTH SECTION ANIMATIONS END
 // NINTH SECTION ANIMATIONS
 $(function () {
+  const yValue = window.innerWidth < 1240 ? 2 : 5;
   const $cards = $(".staggered-card");
   const totalCards = $cards.length;
   const middleIndex = Math.floor(totalCards / 2);
-  const spacing = 5; // horizontal spacing in vw
+  const spacing = yValue; // horizontal spacing in vw
   const scrollDistance = "+=5000";
 
   const tl = gsap.timeline({
@@ -752,11 +753,13 @@ $(function () {
 $(function () {
   // Pin the whole section
   const yValue = window.innerWidth < 1240 ? "-100vh" : "-70vh";
+  const pinning = window.innerWidth < 1240 ? false : true;
+  const positioning = window.innerWidth < 1240 ? "80% bottom" : "top top";
   ScrollTrigger.create({
     trigger: ".breaking-text-section",
-    start: "top top",
+    start: positioning,
     end: "+=500", // Adjust scroll range as needed
-    pin: true,
+    pin: pinning,
     scrub: true,
   });
 
@@ -786,7 +789,7 @@ $(function () {
       transformOrigin: origin,
       scrollTrigger: {
         trigger: ".breaking-text-section",
-        start: "top top",
+        start: positioning,
         end: "+=500",
         scrub: true,
       },
